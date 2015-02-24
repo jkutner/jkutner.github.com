@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>codefinger</title>
+    <link>http://jkutner.github.io</link>
+    <description>RSS feed for codefinger</description>
+    <pubDate>Mon, 23 Feb 2015 16:18:00 -0600</pubDate>
+    <item>
+      <title>How to Deploy to Heroku from Eclipse</title>
+      <link>http://jkutner.github.io/2015/02/23/heroku-eclipse-demo.html</link>
+      <description>&lt;p&gt;This short video (less than a minute and a half) demonstrates how to create,
+deploy and configure a Heroku application from Eclipse.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 23 Feb 2015 16:18:00 -0600</pubDate>
+      <dc:date>2015-02-23T16:18:00-06:00</dc:date>
+    </item>
+    <dc:date>2015-02-23T16:18:00-06:00</dc:date>
+  </channel>
+</rss>
