@@ -8,7 +8,7 @@ logo: false
 paginate: 15
 baseurl: /
 domain_name: 'http://jkutner.github.io'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-60067944-1'
 
 # Details for the RSS feed generator
 url:            'http://jkutner.github.io'
