@@ -1,82 +1,81 @@
 ---
-layout: master
-title: Programmer, Author
-description: Joe Kutner
+layout: default
+title: Home
+cover: false
+about: 'about.html'
 ---
 
-<div id="featured">
-    <div>
-        <img alt="Taro fields in Hanalei, HI" src="images/main_image6.jpg"/>
+<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+    <nav class="main-nav overlay clearfix">
+            {% if page.logo %}
+                <a class="blog-logo" href="{{ site.baseurl }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+            {% endif %}
+        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Subscribe</a>
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">{{ site.name }}</h1>
+            <h2 class="page-description">
+                {% if site.description %} {{ site.description }}. {% endif %}
+                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
+            </h2>
+        </div>
     </div>
-</div>
-<div id="content">
-    <div class="info">
-        <a href="https://twitter.com/codefinger">twitter</a> |
-        <a href="https://github.com/jkutner">github</a> |
-        <a href="https://bitbucket.org/codefinger">bitbucket</a> |
-        <a href="http://www.linkedin.com/pub/joe-kutner/4/1aa/996">linkedin</a>
-
-        <h3>Books</h3>
-        <p>by Joe Kutner</p>
-        <br/>
-        <div style="text-align:center; float:left; width: 185px">
-            <iframe style="border:none" height="182px" seamless="true" src="http://pragprog.com/products/buy_now_insert/jkdepj"
-                    width="155px">Buy Now
-            </iframe>
-        </div>
-        <div style="text-align:center; float:left;">
-            <iframe style="border:none" height="182px" seamless="true" src="http://pragprog.com/products/buy_now_insert/jkthp"
-                    width="155px">Buy Now
-            </iframe>
-        </div>
-        <div style="display:block; clear:both; width: 100%"><br/></div>
-        <div style="text-align:center; float:left; width:350px">
-            <iframe style="border:none" height="182px" seamless="true" src="http://pragprog.com/products/buy_now_insert/jkrp"
-                    width="155px">Buy Now
-            </iframe>
-        </div>
-        <div style="display:block; clear:both; width: 100%"><br/></div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
 
 
-        <h3>Talks</h3>
+<main id="content" class="content" role="main">
 
-        <div style="background-color:#eeeeee;padding:5px">
-            <p style="text-align:center">
-                <a style="color:#9a1900;text-decoration:underlined"
-                   href="http://www.confreaks.com/videos/2304-bigruby2013-build-a-bigger-brain-how-healthy-living-makes-you-smarter">Build a Bigger Brain</a> -
-                <span style="font-style:italic">March 2013</span>
-            </p>
 
-            <p>How Healthy Living Makes You Smarter</p>
-        </div>
-
-        <br/>
-
-        <div style="background-color:#eeeeee;padding:5px">
-            <p style="text-align:center">
-                <a style="color:#9a1900;text-decoration:underlined"
-                   href="http://www.confreaks.com/videos/1118-gogaruco2012-deploy-scale-and-sleep-at-night-with-jruby">Deploy, Scale and Sleep at Night with JRuby</a> -
-                <span style="font-style:italic">Sept 2012</span>
-            </p>
-
-            <p>Learn to deploy using the JVM and Ruby</p>
-        </div>
-
-        <br/>
-
-        <div style="background-color:#eeeeee;padding:5px">
-            <p style="text-align:center">
-                <a style="color:#9a1900;text-decoration:underlined"
-                   href="http://www.confreaks.com/videos/1118-gogaruco2012-deploy-scale-and-sleep-at-night-with-jruby">Ruleby</a> -
-                <span style="font-style:italic">Aug 2008</span>
-            </p>
-
-            <p>Ruleby is a rule engine for Ruby</p>
-        </div>
-
-        <h3>About the Picture</h3>
-        <p>
-            I took this picture in Hanalei, Hawaii on the island of Kauai.
-        </p>
+    <div class="extra-pagination inner">
+        {% include pagination.html %}
     </div>
-</div>
+
+    {% for post in paginator.posts %}
+
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        </header>
+        <section class="post-excerpt">
+            {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
+        </section>
+        <footer class="post-meta">
+            {% if site.author %}
+                <img class="author-thumb" src="assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
+                {{ site.author }}
+            {% endif %}
+            {% if post.categories.size > 0 %}
+                {{ post.categories | array_to_sentence_string | prepend: 'on ' }}
+            {% endif %}
+            <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                {{ post.date | date_to_string }}
+            </time>
+        </footer>
+    </article>
+
+    <!-- Capser below -->
+<!--     <article class="{{post_class}}">
+    <header class="post-header">
+        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
+        {{author}}
+        {{tags prefix=" on "}}
+        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+    </footer>
+    </article> -->
+    <!--  -->
+
+    {% endfor %}
+
+    {% include pagination.html %}
+
+</main>

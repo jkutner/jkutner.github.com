@@ -1,3 +1,5 @@
 _site
-*.iml
-*.ipr
+.DS_Store
+*.swp
+.sass-cache
+

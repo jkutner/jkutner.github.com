@@ -1,0 +1,14 @@
+name: codefinger
+description:
+meta_description: "JVM Programmer, Author, Codefinger"
+
+markdown: redcarpet
+highlighter: pygments
+logo: false
+paginate: 15
+domain_name: 'http://jkutner.github.com/blog'
+google_analytics: 'UA-XXXXXXXX-X'
+
+# Details for the RSS feed generator
+url:            'http://jkutner.github.com/blog'
+author:         'Joe Kutner'
