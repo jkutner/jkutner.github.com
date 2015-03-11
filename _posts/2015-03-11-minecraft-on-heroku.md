@@ -4,16 +4,16 @@ title:  "Running a Minecraft server on Heroku"
 date:   2015-02-23 22:18:00
 ---
 
-You only need one file, with one line of text to run a Mincraft server on Heroku.
+You only need one file with one line of text to run a Mincraft server on Heroku.
 
-Create a new directory, and in it create a `eula.txt` file with the following
+Create a new directory and add a `eula.txt` file with the following
 contents:
 
 {% highlight text %}
 eula=true
 {% endhighlight %}
 
-Now initialize a Git repository, and add the file to it:
+Now initialize a Git repository and commit the file to it:
 
 {% highlight text %}
 $ git init
@@ -80,3 +80,6 @@ for server name enter the `ngrok.com` address you saw in your browser.
 <img src="/assets/images/minecraft-3.jpg" style="width: 100%; margin-left: 0; margin-right: 0" alt="Join Server">
 
 Click "Join Server" and you're ready to play.
+
+You can read more about how to configure and sync the Minecraft server's data
+on the project's [Readme page](https://github.com/jkutner/heroku-buildpack-minecraft/blob/master/README.md).
