@@ -1,6 +1,6 @@
 name: codefinger
 description:
-meta_description: "JVM Programmer, Author, Codefinger"
+meta_description: "Programmer, Author"
 
 markdown: redcarpet
 highlighter: pygments
