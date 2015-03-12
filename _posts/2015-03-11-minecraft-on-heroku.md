@@ -4,7 +4,9 @@ title:  "Running a Minecraft server on Heroku"
 date:   2015-02-23 22:18:00
 ---
 
-You only need one file with one line of text to run a Mincraft server on Heroku.
+You only need one file with one line of text to run a Minecraft server on Heroku
+with my [Minecraft buildpack](https://github.com/jkutner/heroku-buildpack-minecraft).
+It solves all the problems associated with the use of TCP and Heroku's [ephemeral](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem) filesystem.
 
 Create a new directory and add a `eula.txt` file with the following
 contents:
