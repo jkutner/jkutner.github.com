@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Running a Minecraft server on Heroku"
-date:   2015-02-23 22:18:00
+date:   2015-03-11 22:18:00
 ---
 
 You only need one file with one line of text to run a Minecraft server on Heroku
