@@ -4,7 +4,9 @@ title:  "The Twelve Factor Scala App"
 date:   2015-05-11 22:18:00
 ---
 
-The [12-factor app](http://12factor.net) is a language agnostic paradigm for deploying scalable, maintainable and portable applications in the cloud. In this article, I'll outline how it applies specifically to Scala applications. You'll learn how to make your deployments more structured, reliable, and safe — characteristics that Scala programmers embrace in their code, but often neglect in deployment. I'll start with the first five factors and discuss the others in future posts.
+The [12-factor app](http://12factor.net) is a collection of best practices for deploying scalable, maintainable and portable applications in the cloud. It synthesizes the experiences and observations we've made at Heroku after hosting and supporting thousands of production Scala applications.
+
+In this article, you'll learn how to make your deployments more structured, reliable, and safe — characteristics that Scala programmers embrace in their code, but often neglect in deployment. I'll start with the first five factors and discuss the others in future posts.
 
 ## Factor 1: Codebase
 
