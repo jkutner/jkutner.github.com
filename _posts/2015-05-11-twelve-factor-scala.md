@@ -4,9 +4,7 @@ title:  "The Twelve Factor Scala App"
 date:   2015-05-11 22:18:00
 ---
 
-At [Heroku](http://heroku.com), we host thousands of Scala applications -- many of which are deployed on a daily basis. As a result, we've identified many characteristics that make deployments more scalable, repeatable, and maintainable. We've compiled these principles and best practices into a philosophy called the [12-factor app](http://12factor.net).
-
-The 12-factor app is a language agnostic paradigm. But in this article, I'll outline how it applies specifically to Scala applications. You'll learn how to make your deployments more structured, reliable, and safe -- characteristics that Scala programmer embrace in their code, but often neglect in deployment. I'll start with the first five factors and discuss the others in future posts.
+The [12-factor app](http://12factor.net) is a language agnostic paradigm for deploying scalable, maintainable and portable applications in the cloud. In this article, I'll outline how it applies specifically to Scala applications. You'll learn how to make your deployments more structured, reliable, and safe — characteristics that Scala programmers embrace in their code, but often neglect in deployment. I'll start with the first five factors and discuss the others in future posts.
 
 ## Factor 1: Codebase
 
@@ -16,7 +14,8 @@ Use version control. That part goes without saying I hope. But more specifically
 
 I see this principle often violated with the use of [sbt sub-projects](http://www.scala-sbt.org/release/tutorial/Multi-Project.html). Sub-projects are great for [breaking out libraries from your code](https://www.playframework.com/documentation/2.3.x/SBTSubProjects), but deployment gets messy when you have a distinct application as a sub-project. It becomes difficult to separate the commit history between applications, and makes isolated rollbacks impossible.
 
-A solution to this problem is [Git submodules](http://www.git-scm.com/book/en/v2/Git-Tools-Submodules). You can still use sbt sub-projects so long as your sub-project directory is actually a Git submodule added to your project with a command such as:
+A solution to this problem is [Git submodules](http://www.git-scm.com/book/en/v2/Git-Tools-Submodules), which allow you to use
+sbt sub-projects that are actually their own Git repository. A Git submodule can be added to your project with a command such as:
 
 {% highlight text %}
 $ git submodule add https://github.com/jkutner/play-sub-project
