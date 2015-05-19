@@ -84,7 +84,7 @@ javax.servlet.ServletConfig getInitParameterNames()
 {% endhighlight %}
 
 Or just [use your favorite IDE](https://www.jetbrains.com/idea/help/run-debug-configuration-remote.html).
-You're favorite is IntelliJ IDEA right?
+Your favorite is IntelliJ IDEA right?
 
 ## Connect to your local debugger
 
