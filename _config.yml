@@ -1,6 +1,6 @@
 name: codefinger
-description:
-meta_description: "Programmer, Author"
+description: 
+meta_description: "Deploying with JRuby, Healthy Programmer, Remote Pairing, Heroku"
 
 markdown: redcarpet
 highlighter: pygments
