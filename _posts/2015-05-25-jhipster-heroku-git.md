@@ -17,8 +17,7 @@ locally.
 ## Creating a JHipster app
 
 To begin, make sure you have [the JHipster dependencies installed](http://jhipster.github.io/installation.html).
-
-Then generator a new JHipster app (make sure you choose PostgreSQL for the database):
+Then generate a new JHipster app (make sure you choose PostgreSQL for the database):
 
 {% highlight text %}
 $ mkdir myapp/
