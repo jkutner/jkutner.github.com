@@ -89,7 +89,7 @@ this command:
 $ npm install bower grunt-cli --save
 {% endhighlight %}
 
-Your `package.json` now contains something like this:
+Your `package.json` now contains something like this (which you could also have added manually instead of running the `npm` command):
 
 {% highlight json %}
 "dependencies": {
@@ -98,11 +98,52 @@ Your `package.json` now contains something like this:
 }
 {% endhighlight %}
 
-Add the `package.json` changes to Git by running these commands:
+Next, add a Maven profile to clear some unneeded build-time dependencies from the slug.
+Add this code to your `pom.xml` in the `<profiles>` section:
+
+{% highlight xml %}
+<profile>
+  <id>heroku</id>
+  <build>
+    <plugins>
+      <plugin>
+      <artifactId>maven-clean-plugin</artifactId>
+      <version>2.5</version>
+      <executions>
+        <execution>
+          <id>clean-build-artifacts</id>
+          <phase>install</phase>
+          <goals><goal>clean</goal></goals>
+          <configuration>
+            <excludeDefaultDirectories>true</excludeDefaultDirectories>
+            <filesets>
+              <fileset>
+                <directory>node_modules</directory>
+              </fileset>
+              <fileset>
+                <directory>.heroku/node</directory>
+              </fileset>
+              <fileset>
+                <directory>target</directory>
+                <excludes>
+                  <exclude>*.war</exclude>
+                </excludes>
+              </fileset>
+            </filesets>
+          </configuration>
+        </execution>
+      </executions>
+      </plugin>
+    </plugins>
+  </build>
+</profile>
+{% endhighlight %}
+
+Now add the `package.json` and `pom.xml` changes to Git by running these commands:
 
 {% highlight text %}
-$ git add package.json
-$ git commit -m "Add bower and grunt to deps"
+$ git add package.json pom.xml
+$ git commit -m "Update for Heroku Git"
 {% endhighlight %}
 Finally, deploy with Git:
 
