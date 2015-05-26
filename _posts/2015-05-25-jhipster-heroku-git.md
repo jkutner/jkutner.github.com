@@ -23,6 +23,7 @@ Then generate a new JHipster app (make sure you choose PostgreSQL for the databa
 $ mkdir myapp/
 $ cd myapp/
 $ yo jhipster
+...
 ? (3/14) Do you want to use Java 8? Yes (use Java 8)
 ? (4/14) Which *type* of authentication would you like to use? HTTP Session Authentication (stateful, default Spring Security mechanism)
 ? (5/14) Which *type* of database would you like to use? SQL (H2, MySQL, PostgreSQL)
