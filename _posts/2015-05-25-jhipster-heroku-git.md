@@ -17,12 +17,24 @@ locally.
 ## Creating a JHipster app
 
 To begin, make sure you have [the JHipster dependencies installed](http://jhipster.github.io/installation.html).
-Then generate a new JHipster app (make sure you choose PostgreSQL for the database):
+Then generate a new JHipster app (make sure you choose PostgreSQL for the database. I've included my choice for the other setup questions):
 
 {% highlight text %}
 $ mkdir myapp/
 $ cd myapp/
 $ yo jhipster
+? (3/14) Do you want to use Java 8? Yes (use Java 8)
+? (4/14) Which *type* of authentication would you like to use? HTTP Session Authentication (stateful, default Spring Security mechanism)
+? (5/14) Which *type* of database would you like to use? SQL (H2, MySQL, PostgreSQL)
+? (6/14) Which *production* database would you like to use? PostgreSQL
+? (7/14) Which *development* database would you like to use? H2 in-memory with Web console
+? (8/14) Do you want to use Hibernate 2nd level cache? No
+? (9/14) Do you want to use a search engine in your application? No
+? (10/14) Do you want to use clustered HTTP sessions? No
+? (11/14) Do you want to use WebSockets? No
+? (12/14) Would you like to use Maven or Gradle for building the backend? Maven (recommended)
+? (13/14) Would you like to use Grunt or Gulp.js for building the frontend? Grunt (recommended)
+? (14/14) Would you like to use the Compass CSS Authoring Framework? No
 {% endhighlight %}
 
 Now you can get it ready for Heroku.
