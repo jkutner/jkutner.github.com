@@ -13,7 +13,7 @@ Then we'll look at a non-Ruby framework, Netty, which allows you to do low-level
 
 Your web server has a limited number of threads that can handle requests, and those
 threads often spend their time waiting for a request to do some kind of IO.
-That is, the thread is not in use -- it's just blocked waiting for some other process
+That is, the thread is not in use — it's just blocked waiting for some other process
 to finish up.
 
 <img src="/assets/images/block-wait.png" style="width: 100%; margin-left: 0; margin-right: 0" alt="Join Server">
