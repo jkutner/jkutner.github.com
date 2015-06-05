@@ -142,5 +142,5 @@ I'd like to work on the following projects:
 * A netty-rack bridge.
 * A new Ruby web framework specifically for non-blocking IO, and built on Netty
 
-If you're interested in helping with any of these, reach to me
+If you're interested in helping with any of these, contact me
 on [IRC](https://github.com/jruby/jruby/wiki/IRC) or [Twitter](https://twitter.com/codefinger).
