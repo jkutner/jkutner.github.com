@@ -75,3 +75,6 @@ to [me](https://twitter.com/codefinger).
 If you don't find any problems, and still want to contribute, try collecting
 some data points for the G1GC (the new default garbage collector) as describe in
 [this post on hotspot-dev](http://mail.openjdk.java.net/pipermail/hotspot-dev/2015-June/019221.html).
+
+If you'd like to play around with some new features, check out this great post
+on [what's new in JDK 9](http://blog.takipi.com/java-9-the-ultimate-feature-list/) from Takipi.
