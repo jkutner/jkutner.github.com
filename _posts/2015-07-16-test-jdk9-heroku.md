@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Testing JDK 9 EA with Heroku"
-date:   2015-07-16 22:18:00
+date:   2015-07-16 09:18:00
 ---
 
 You can test JDK 9 in just a couple of minutes by deploying any JVM-based app to
