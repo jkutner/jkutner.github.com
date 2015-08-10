@@ -12,7 +12,7 @@ At JRubyConf, [Tom](https://twitter.com/tom_enebo) and [Charlie](https://twitter
 4. Use `mjruby` instead of `jruby` to launch the most complicated thing you can think of.
 5. Tell me what broke.
 
-There is catch though: Windows thinks my binary is a virus. The command works for a moment, but then crashes with an error StackHash_0a9e that appears to be related to data execution prevention (DEP). But I'm running Windows in a VM, so please test this anyways as YMMV.
+There is catch though: Windows thinks my binary is a virus. The command works for a moment, but then crashes with an error `StackHash_0a9e` that appears to be related to data execution prevention (DEP). But I'm running Windows in a VM, so please test this anyways as YMMV.
 
 I desperately need help with the Windows part. I've exhausted my ability to debug the problem.
 
