@@ -7,7 +7,7 @@ date:   2015-08-10 16:43:00
 At JRubyConf, [Tom](https://twitter.com/tom_enebo) and [Charlie](https://twitter.com/headius) (of JRuby fame) goaded me into rewriting the jruby-launcher (effectively the `jruby` command). I have made a lot of progress, and now I need some help testing it. Please take 5 mins and do the following:
 
 1. Download the `mjruby` [binary for your platform](https://github.com/jkutner/mjruby/releases/tag/v0.1).
-2. Put it in your `$JRUBY_HOME/bin directory` (next to your `jruby` command)
+2. Put it in your `$JRUBY_HOME/bin` directory (next to your `jruby` command)
 3. Set `JAVA_HOME`
 4. Use `mjruby` instead of `jruby` to launch the most complicated thing you can think of.
 5. Tell me what broke.
