@@ -131,7 +131,7 @@ Note that when using WebSockets in Firefox, you'll need to use an `http://` addr
 
 ## Development Workflow
 
-In your normal workflow, you'd want to make some changes and see them appear in the Docker container. We'll demonstrate how that works. Open the `` and look for this code:
+In your normal workflow, you'd want to make some changes and see them appear in the Docker container. We'll demonstrate how that works. Open the `src/demo/scheduling.clj` file and look for this code:
 
 {% highlight clojure %}
 ;; start a couple of jobs, along with a job to stop them in 20 seconds
