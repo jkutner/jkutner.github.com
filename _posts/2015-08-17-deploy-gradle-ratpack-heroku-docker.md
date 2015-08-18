@@ -98,13 +98,18 @@ Browse to the `/db` path to see it in action:
 $ open "http://$(docker-machine ip default):8080/db"
 {% endhighlight %}
 
-Your containerized web app and database are now connected. You've created a local cloud right here on your machine. Now you can create a Heroku app and deploy to the public cloud by running these commands:
+Your containerized web app and database are now connected. You've created a local cloud right here on your machine. Now you can create a Heroku app and deploy to the public cloud.
+First, provision a new app thusly:
 
 {% highlight text %}
 $ heroku create
 Creating limitless-mesa-1279... done, stack is cedar-14
 https://limitless-mesa-1279.herokuapp.com/ | https://git.heroku.com/limitless-mesa-1279.git
+{% endhighlight %}
 
+And deploy to Heroku with the Docker CLI
+
+{% highlight text %}
 $ heroku docker:release
 Remote addons: heroku-postgresql (1)
 Local addons: heroku-postgresql (1)

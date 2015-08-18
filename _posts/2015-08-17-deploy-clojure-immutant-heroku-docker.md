@@ -100,15 +100,13 @@ After you've played around with some of the features, like WebSockets, you can d
 
 {% highlight text %}
 $ heroku create
+Creating limitless-mesa-1279... done, stack is cedar-14
+https://limitless-mesa-1279.herokuapp.com/ | https://git.heroku.com/limitless-mesa-1279.git
 {% endhighlight %}
 
 And deploy to Heroku with the Docker CLI
 
 {% highlight text %}
-$ heroku create
-Creating limitless-mesa-1279... done, stack is cedar-14
-https://limitless-mesa-1279.herokuapp.com/ | https://git.heroku.com/limitless-mesa-1279.git
-
 $ heroku docker:release
 Remote addons: heroku-postgresql (1)
 Local addons: heroku-postgresql (1)
