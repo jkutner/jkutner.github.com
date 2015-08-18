@@ -4,7 +4,7 @@ title:  "Deploying Gradle Apps to Heroku with Docker"
 date:   2015-08-17 09:43:00
 ---
 
-In this post, you'll learn how to deploy a Docker-based Gradle application to Heroku using the Heroku Docker CLI. We'll use a simple [Ratpack](http://ratpack.io/) app as an example, but you can follow along with any Gradle application.
+In this post, you'll learn how to deploy a Docker-based Gradle application to Heroku using the [Heroku Docker CLI](https://devcenter.heroku.com/articles/docker). We'll use a simple [Ratpack](http://ratpack.io/) app as an example, but you can follow along with any Gradle application.
 
 ## Prerequsites
 
@@ -158,7 +158,7 @@ Heroku's Docker support is currently in beta. As we work to make the integration
 better, we'd love to hear your feedback so we focus on building the things you need.
 Feel free to reach out to me directly with you thoughts and ideas.
 
-You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI]().
+You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI](https://devcenter.heroku.com/articles/docker).
 And you can learn more about [Ratpack](http://ratpack.io/) and [Docker](https://docs.docker.com/)
 from their respective documentation sites. You can also find more information about
 [deploying Gradle apps to Heroku](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku) on the Dev Center.

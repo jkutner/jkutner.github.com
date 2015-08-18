@@ -4,7 +4,7 @@ title:  "Deploying Clojure Apps to Heroku with Docker"
 date:   2015-08-17 09:43:00
 ---
 
-In this post, you'll learn how to deploy a Docker-based Clojure application to Heroku using the [Heroku Docker CLI](https://blog.heroku.com/archives/2015/8/17/docker_updates_local_data_stores_and_more_languages). We'll use the [Immutant Feature Demo](https://github.com/immutant/feature-demo) as an example, but you can follow along with any Clojure application as long as it uses Leiningen to build an [uberjar](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#uberjar).
+In this post, you'll learn how to deploy a Docker-based Clojure application to Heroku using the [Heroku Docker CLI](https://devcenter.heroku.com/articles/docker). We'll use the [Immutant Feature Demo](https://github.com/immutant/feature-demo) as an example, but you can follow along with any Clojure application as long as it uses Leiningen to build an [uberjar](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#uberjar).
 
 ## Prerequsites
 
@@ -179,7 +179,7 @@ Heroku's Docker support is currently in beta. As we work to make the integration
 better, we'd love to hear your feedback so we focus on building the things you need.
 Feel free to reach out to me directly with you thoughts and ideas.
 
-You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI](https://blog.heroku.com/archives/2015/8/17/docker_updates_local_data_stores_and_more_languages).
+You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI](https://devcenter.heroku.com/articles/docker).
 And you can learn more about [Immutant](http://immutant.org/) and [Docker](https://docs.docker.com/)
 from their respective documentation sites. You can also find more information about
 [deploying Clojure apps to Heroku](https://devcenter.heroku.com/articles/deploying-clojure) on the Dev Center.
