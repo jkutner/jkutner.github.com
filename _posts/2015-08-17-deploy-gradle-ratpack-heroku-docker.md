@@ -157,7 +157,7 @@ root@7c7b5905b2a0:~/user#
 From this shell, you can run one-off tasks like database migrations.
 
 Heroku's Docker support is currently in beta. As we work to make the integration
-better, we'd love to hear your feedback so we focus on building the things you need.
+better, we'd love to hear your feedback so we can focus on building the things you need.
 Feel free to reach out to me directly with you thoughts and ideas.
 
 You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI](https://devcenter.heroku.com/articles/docker
