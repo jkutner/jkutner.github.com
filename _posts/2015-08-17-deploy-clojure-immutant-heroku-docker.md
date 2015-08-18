@@ -77,7 +77,7 @@ Successfully built ada3689e717a
 ...
 {% endhighlight %}
 
-The first time you run this it will take a while as Leiningen downloads the app's dependencies into the Docker container. Dut don't worry, they'll be cached.
+The first time you run this it will take a while as Leiningen downloads the app's dependencies into the Docker container. But don't worry, they'll be cached.
 
 When the container has started, you'll see some output like this:
 
