@@ -154,4 +154,4 @@ From this shell, you can run one-off tasks like database migrations.
 You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI]().
 And you can learn more about [Ratpack](http://ratpack.io/) and [Docker](https://docs.docker.com/)
 from their respective documentation sites. You can also find more information about
-[deploy Gradle apps to Heroku](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku) on the Dev Center.
+[deploying Gradle apps to Heroku](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku) on the Dev Center.
