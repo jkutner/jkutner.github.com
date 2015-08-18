@@ -48,7 +48,10 @@ This application is already prepared for Heroku. It contains a `Procfile`, which
 }
 {% endhighlight %}
 
-The `image` element is what Heroku uses to determine the base Docker image to run the container from. Given this, we can initialize the app with the following command:
+The `image` element is what Heroku uses to determine the base Docker image to run the container from.
+The `addons` element determines what additional services will be attached to your container. The Heroku
+currently supports Postgres, Redis and a few others stacks with more to come.
+Given this configuration, we can initialize the app with the following command:
 
 {% highlight text %}
 $ heroku docker:init
@@ -150,6 +153,10 @@ root@7c7b5905b2a0:~/user#
 {% endhighlight %}
 
 From this shell, you can run one-off tasks like database migrations.
+
+Heroku's Docker support is currently in beta. As we work to make the integration
+better, we'd love to hear your feedback so we focus on building the things you need.
+Feel free to reach out to me directly with you thoughts and ideas.
 
 You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI]().
 And you can learn more about [Ratpack](http://ratpack.io/) and [Docker](https://docs.docker.com/)

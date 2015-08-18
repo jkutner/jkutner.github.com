@@ -4,7 +4,7 @@ title:  "Deploying Clojure Apps to Heroku with Docker"
 date:   2015-08-17 09:43:00
 ---
 
-In this post, you'll learn how to deploy a Docker-based Clojure application to Heroku using the Heroku Docker CLI. We'll use the [Immutant Feature Demo](https://github.com/immutant/feature-demo) as an example, but you can follow along with any Clojure application as long as it uses Leiningen to build an [uberjar](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#uberjar).
+In this post, you'll learn how to deploy a Docker-based Clojure application to Heroku using the [Heroku Docker CLI](https://blog.heroku.com/archives/2015/8/17/docker_updates_local_data_stores_and_more_languages). We'll use the [Immutant Feature Demo](https://github.com/immutant/feature-demo) as an example, but you can follow along with any Clojure application as long as it uses Leiningen to build an [uberjar](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#uberjar).
 
 ## Prerequsites
 
@@ -50,7 +50,10 @@ This application is already prepared for Heroku. It contains a `Procfile`, which
 }
 {% endhighlight %}
 
-The `image` what Heroku uses to determine the base Docker image to run container from. Given this, we can initialize the app with the following command:
+The `image` what Heroku uses to determine the base Docker image to run container from.
+The `addons` element determines what additional services will be attached to your container. The Heroku
+currently supports Postgres, Redis and a few others stacks with more to come.
+Given this configuration, we can initialize the app with the following command:
 
 {% highlight text %}
 $ heroku docker:init
@@ -123,7 +126,7 @@ Then you can open the app with this command:
 $ heroku open
 {% endhighlight %}
 
-Play around with the Immutant features such as WebSockets and Server-Sent Events. Or you can start making use of the PostgreSQL database that is running locally with Docker. You can access it with the `DATABASE_URL` environment variable just as you would on Heroku.
+Note that when using WebSockets in Firefox, you'll need to use an `http://` addres instead of the `https://` that Heroku defaults to.
 
 ## Development Workflow
 
@@ -164,7 +167,7 @@ web_1              | boop
 Open the app in a browser again and navigate to the `/hello` path. You'll see your changes. Each time modify your app, you need to re-build the image and then launch the `up` command. You can also get terminal access to the image by running the `shell` command thusly:
 
 {% highlight text %}
-$ docker-compose build shell
+$ docker-compose run shell
 Building shell...
 ...
 root@7c7b5905b2a0:~/user#
@@ -172,7 +175,11 @@ root@7c7b5905b2a0:~/user#
 
 From this shell, you can run one-off tasks like database migrations.
 
-You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI]().
+Heroku's Docker support is currently in beta. As we work to make the integration
+better, we'd love to hear your feedback so we focus on building the things you need.
+Feel free to reach out to me directly with you thoughts and ideas.
+
+You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI](https://blog.heroku.com/archives/2015/8/17/docker_updates_local_data_stores_and_more_languages).
 And you can learn more about [Immutant](http://immutant.org/) and [Docker](https://docs.docker.com/)
 from their respective documentation sites. You can also find more information about
 [deploying Clojure apps to Heroku](https://devcenter.heroku.com/articles/deploying-clojure) on the Dev Center.
