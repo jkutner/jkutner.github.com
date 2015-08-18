@@ -178,7 +178,7 @@ body {
     max-height: 100%;
     font-family: "Merriweather", serif;
     letter-spacing: 0.01rem;
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* main text? */
     line-height: 1.75em;
     color: #3A4145;
     -webkit-font-feature-settings: 'kern' 1;
@@ -906,7 +906,7 @@ body:not(.post-template) .post-title {
 }
 
 .post-footer h4 {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* main text? */
     margin: 0;
 }
 
@@ -960,7 +960,7 @@ body:not(.post-template) .post-title {
 }
 
 .post-footer .share a {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* main text? */
     display: inline-block;
     margin: 1rem 1.6rem 1.6rem 0;
     color: #BBC7CC;
@@ -1149,7 +1149,7 @@ body:not(.post-template) .post-title {
 }
 
 .author-bio {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* main text? */
     line-height: 1.5em;
     font-weight: 200;
     color: #50585D;
@@ -1366,7 +1366,7 @@ body:not(.post-template) .post-title {
     }
 
     .page-description {
-        font-size: 1.8rem;
+        font-size: 1.5rem; /* main text? */
         line-height: 1.5em;
     }
 
@@ -1408,7 +1408,7 @@ body:not(.post-template) .post-title {
     }
 
     h6 {
-        font-size: 1.8rem;
+        font-size: 1.5rem; /* main text? */
     }
 
     .author-profile {
@@ -1602,11 +1602,11 @@ body:not(.post-template) .post-title {
     }
 
     h5 {
-        font-size: 1.8rem;
+        font-size: 1.5rem; /* main text? */
     }
 
     h6 {
-        font-size: 1.8rem;
+        font-size: 1.5rem; /* main text? */
     }
 
     body:not(.post-template) .post-title {
