@@ -4,7 +4,7 @@ title:  "Deploying Clojure Apps to Heroku with Docker"
 date:   2015-08-17 09:43:00
 ---
 
-In this post, you'll learn how to deploy a Docker-based Clojure application to Heroku using the [Heroku Docker CLI](https://devcenter.heroku.com/articles/docker). We'll use the [Immutant Feature Demo](https://github.com/immutant/feature-demo) as an example, but you can follow along with any Clojure application as long as it uses Leiningen to build an [uberjar](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#uberjar).
+In this post, you'll learn how to deploy a Docker-based Clojure application to Heroku using the [Heroku Docker CLI](https://devcenter.heroku.com/articles/docker). We'll use the [Immutant Feature Demo](https://github.com/immutant/feature-demo) as an example, but you can follow along with any Clojure application as long as it uses Leiningen to build an [uberjar](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#uberjar). This is a Mac and Linux guide only (until Docker supports `docker-compose` on Windows).
 
 ## Prerequsites
 
@@ -30,14 +30,15 @@ Now you're ready to deploy.
 
 ## Deploying an App
 
-To begin, clone the [Immutant demo app](https://github.com/immutant/feature-demo) to your local machine:
+To begin, clone the [Immutant demo app](https://github.com/immutant/feature-demo) to your local machine
+(if you'd prefer a bare-bones Clojure app you can substitute [this Ring app](https://github.com/heroku/clojure-getting-started)):
 
 {% highlight text %}
 $ git clone https://github.com/immutant/feature-demo
 $ cd feature-demo
 {% endhighlight %}
 
-This application is already prepared for Heroku. It contains a `Procfile`, which [tells Heroku how to run the app](https://devcenter.heroku.com/articles/procfile), and an `app.json` file that contains some meta-data about the app. The important part of the `app.json` file is the `image` element, shown below:
+The app is already prepared for Heroku. It contains a `Procfile`, which [tells Heroku how to run the app](https://devcenter.heroku.com/articles/procfile), and an `app.json` file that contains some meta-data about the app. The important part of the `app.json` file is the `image` element, shown below:
 
 {% highlight json %}
 {
@@ -50,9 +51,9 @@ This application is already prepared for Heroku. It contains a `Procfile`, which
 }
 {% endhighlight %}
 
-The `image` what Heroku uses to determine the base Docker image to run container from.
-The `addons` element determines what additional services will be attached to your container. The Heroku
-currently supports Postgres, Redis and a few others stacks with more to come.
+The `"image"` element is what Heroku uses to determine the base Docker image to run the container from.
+The `"addons"` element determines what additional services will be attached to your container. The Heroku
+currently supports Postgres, Redis and a few others services with more to come.
 Given this configuration, we can initialize the app with the following command:
 
 {% highlight text %}

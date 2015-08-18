@@ -4,7 +4,7 @@ title:  "Deploying Gradle Apps to Heroku with Docker"
 date:   2015-08-17 09:43:00
 ---
 
-In this post, you'll learn how to deploy a Docker-based Gradle application to Heroku using the [Heroku Docker CLI](https://devcenter.heroku.com/articles/docker). We'll use a simple [Ratpack](http://ratpack.io/) app as an example, but you can follow along with any Gradle application.
+In this post, you'll learn how to deploy a Docker-based Gradle application to Heroku using the [Heroku Docker CLI](https://devcenter.heroku.com/articles/docker). We'll use a simple [Ratpack](http://ratpack.io/) app as an example, but you can follow along with any Gradle application. This is a Mac and Linux guide only (until Docker supports `docker-compose` on Windows).
 
 ## Prerequsites
 
@@ -37,7 +37,7 @@ $ git clone https://github.com/heroku/gradle-getting-started
 $ cd gradle-getting-started
 {% endhighlight %}
 
-This application is already prepared for Heroku. It contains a `Procfile`, which [tells Heroku how to run the app](https://devcenter.heroku.com/articles/procfile), and an `app.json` file that contains some meta-data about the app. The important part of the `app.json` file is the `image` element, shown below:
+The app is already prepared for Heroku. It contains a `Procfile`, which [tells Heroku how to run the app](https://devcenter.heroku.com/articles/procfile), and an `app.json` file that contains some meta-data about the app. The important part of the `app.json` file is the `"image"` element, shown below:
 
 {% highlight json %}
 {
@@ -48,9 +48,9 @@ This application is already prepared for Heroku. It contains a `Procfile`, which
 }
 {% endhighlight %}
 
-The `image` element is what Heroku uses to determine the base Docker image to run the container from.
-The `addons` element determines what additional services will be attached to your container. The Heroku
-currently supports Postgres, Redis and a few others stacks with more to come.
+The `"image"` element is what Heroku uses to determine the base Docker image to run the container from.
+The `"addons"` element determines what additional services will be attached to your container. The Heroku
+currently supports Postgres, Redis and a few others services with more to come.
 Given this configuration, we can initialize the app with the following command:
 
 {% highlight text %}
@@ -59,7 +59,9 @@ Wrote Dockerfile
 Wrote docker-compose.yml
 {% endhighlight %}
 
-This created a `Dockerfile` based on the `heroku/gradle` image and a `docker-compose.yml` that constructs the environment (including a local database running in a Docker container).
+This created a `Dockerfile` based on the `heroku/gradle` image and a
+`docker-compose.yml` defining the containers in your environemnt
+(including a local Postgres database running on Docker).
 
 Now run this command to start the application in a container:
 
@@ -96,7 +98,7 @@ Browse to the `/db` path to see it in action:
 $ open "http://$(docker-machine ip default):8080/db"
 {% endhighlight %}
 
-You've created a local cloud right here on your machine. Now you can create a Heroku app and deploy to the public cloud by running these commands:
+Your containerized web app and database are now connected. You've created a local cloud right here on your machine. Now you can create a Heroku app and deploy to the public cloud by running these commands:
 
 {% highlight text %}
 $ heroku create
@@ -140,10 +142,10 @@ $ docker-compose build web
 ...
 $ docker-compose up web
 ...
-web_1              | [main] INFO ratpack.server.RatpackServer - Ratpack started for http://localhost:8080
+web_1 | [main] INFO ratpack.server.RatpackServer - Ratpack started for http://localhost:8080
 {% endhighlight %}
 
-Open the app in a browser again and navigate to the `/hello` path. You'll see your changes. Each time modify your app, you need to re-build the image and then launch the `up` command. You can also get terminal access to the image by running the `shell` command thusly:
+Open the app in a browser again and navigate to the `/hello` path to see your changes. Each time you modify your app, you need to re-build the image and then launch the `up` command. You can also get terminal access to the image by running the `shell` command thusly:
 
 {% highlight text %}
 $ docker-compose build shell
@@ -158,7 +160,8 @@ Heroku's Docker support is currently in beta. As we work to make the integration
 better, we'd love to hear your feedback so we focus on building the things you need.
 Feel free to reach out to me directly with you thoughts and ideas.
 
-You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI](https://devcenter.heroku.com/articles/docker).
+You can visit the Heroku Dev Center for more information on [Heroku's Docker CLI](https://devcenter.heroku.com/articles/docker
+  ).
 And you can learn more about [Ratpack](http://ratpack.io/) and [Docker](https://docs.docker.com/)
 from their respective documentation sites. You can also find more information about
 [deploying Gradle apps to Heroku](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku) on the Dev Center.
