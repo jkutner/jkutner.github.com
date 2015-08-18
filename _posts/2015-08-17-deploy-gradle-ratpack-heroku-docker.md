@@ -6,7 +6,7 @@ date:   2015-08-17 09:43:00
 
 In this post, you'll learn how to deploy a Docker-based Gradle application to Heroku using the [Heroku Docker CLI](https://devcenter.heroku.com/articles/docker). We'll use a simple [Ratpack](http://ratpack.io/) app as an example, but you can follow along with any Gradle application. This is a Mac and Linux guide only (until Docker supports `docker-compose` on Windows).
 
-## Prerequsites
+## Prerequisites
 
 You'll need a few pieces of software before you get started:
 

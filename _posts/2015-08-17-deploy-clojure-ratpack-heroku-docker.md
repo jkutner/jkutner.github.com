@@ -6,7 +6,7 @@ date:   2015-08-17 09:43:00
 
 In this post, you'll learn how to deploy a Docker-based Clojure application to Heroku using the [Heroku Docker CLI](https://devcenter.heroku.com/articles/docker). We'll use the [Immutant Feature Demo](https://github.com/immutant/feature-demo) as an example, but you can follow along with any Clojure application as long as it uses Leiningen to build an [uberjar](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#uberjar). This is a Mac and Linux guide only (until Docker supports `docker-compose` on Windows).
 
-## Prerequsites
+## Prerequisites
 
 You'll need a few pieces of software before you get started:
 
