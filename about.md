@@ -8,7 +8,7 @@ and curate the JVM at [Heroku](http://heroku.com).
 You can find me on [Twitter](https://twitter.com/codefinger)
 and on [Github](https://github.com/jkutner).
 
-I've written [Deploying with JRuby](http://amzn.com/1934356972),
+I'm the author of [Deploying with JRuby](http://amzn.com/1934356972),
 [The Healthy Programmer](http://healthyprog.com/), and
 [Remote Pairing](https://pragprog.com/book/jkrp/remote-pairing).
 
