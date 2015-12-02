@@ -82,6 +82,10 @@ You can enable  Tiered compilation with the following JVM arguments:
 -XX:+TieredCompilation -XX:TieredStopAtLevel=1
 {% endhighlight %}
 
+**UPDATE**: Tiered compilation is the default in most modern JVMs. So the main difference here is the `TieredStopAtLevel`. Setting this to 1 instructs the compiler to stop
+optimizing (i.e. Just-in-time compiling) code after the first level. You can read more about what this means in
+[Java Performance: The Definitive Guide](https://www.safaribooksonline.com/library/view/java-performance-the/9781449363512/) by Scott Oaks.
+
 Another common option is disabling the JVM bytecode verification by setting this option:
 
 {% highlight text %}
