@@ -6,7 +6,7 @@ date:   2015-12-01 10:02:00
 
 The performance of the JVM can’t be beat, unless you’re talking about its start-up time. The JVM isn't known for being fast to boot, and many application frameworks have only made the situation worse.
 
-In this post, you’ll learn a few tricks that can help improve your app’s boot time. Much of what I’ll focus on relates to the Spring framework, but some of it applies to all JVM apps. Your goal should be to get an application to boot in under one minute. At [Heroku](http://heroku.com), we believe this is a good practice that leads to better deployment processes. That's why it's a part of the [Disposability principle in the 12-factor app](http://12factor.net/disposability).
+In this post, you’ll learn a few tricks that can help improve your app’s boot time. Much of what I’ll focus on relates to the Spring framework, but some of it applies to all JVM apps. Your goal should be to get an application to boot in under one minute. At [Heroku](http://heroku.com/java), we believe this is a good practice that leads to better deployment processes. That's why it's a part of the [Disposability principle in the 12-factor app](http://12factor.net/disposability).
 
 The most common causes of slow start-up include:
 
@@ -93,6 +93,12 @@ Another common option is disabling the JVM bytecode verification by setting this
 {% endhighlight %}
 
 While this will improve startup time, it’s [generally discouraged in production systems](https://blogs.oracle.com/buck/entry/never_disable_bytecode_verification_in) for security and other reasons.
+
+## By Example
+
+If you want to see how fast a Java app can and shuold start up, try the Spark example in the guide for [Getting Started with Java on Heroku](https://devcenter.heroku.com/articles/getting-started-with-java).
+
+If you prefer Gradle, try the guide for [Getting Started with Gradle on Heroku](https://devcenter.heroku.com/articles/getting-started-with-gradle-on-heroku) guide, which uses Ratpack.
 
 ## Will it get better?
 
