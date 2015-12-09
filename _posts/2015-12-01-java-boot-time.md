@@ -98,7 +98,7 @@ While this will improve startup time, it’s [generally discouraged in productio
 
 If you want to see how fast a Java app can and shuold start up, try the Spark example in the guide for [Getting Started with Java on Heroku](https://devcenter.heroku.com/articles/getting-started-with-java#introduction).
 
-If you prefer Gradle, try the guide for [Getting Started with Gradle on Heroku](https://devcenter.heroku.com/articles/getting-started-with-gradle-on-heroku#introduction) guide, which uses Ratpack.
+If you prefer Gradle, try the [Getting Started with Gradle on Heroku](https://devcenter.heroku.com/articles/getting-started-with-gradle-on-heroku#introduction) guide, which uses Ratpack.
 
 ## Will it get better?
 
