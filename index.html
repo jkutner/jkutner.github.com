@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Home
-cover: false
 about: 'about.html'
+cover: assets/images/devoxx2015.jpg
 ---
 
-<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+<header class="main-header {% if page.cover %}" style="height:400px; background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav overlay clearfix">
             {% if page.logo %}
                 <a class="blog-logo" href="{{ site.baseurl }}">
