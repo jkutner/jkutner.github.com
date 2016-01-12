@@ -17,7 +17,7 @@ the Postgres JDBC driver on the platform. In this way, customers would get more 
 It's useful to understand how we did this because it can be replicated in your development environment to ensure SSL
 is used when connecting to a remote test, stage or even production database.
 
-## Setting the SSL Mode
+## Setting the SSL mode
 
 Since version `9.2-1002-jdbc4`, the PostgreSQL JDBC driver has supported the `sslmode` property, which corresponds to the
 `sslmode` setting in [libpq](http://www.postgresql.org/docs/current/static/libpq-ssl.html). The desired value when connecting
@@ -37,18 +37,17 @@ JDBC URL for you, and it is not always simple to append parameters to these URLs
 
 Thus, Heroku needed a way to set `sslmode` outside of the connection string.
 
-## Adding Driver Properties to the Classpath
+## Adding driver properties to the classpath
 
 The Postgres JDBC Driver will check the JVM's classpath for a `org/postgresql/driverconfig.properties` file, which can
 contain any number of properties, just as the JDBC URL would.
-
 On Heroku, we created a small JAR file containing only this properties file, with the following contents:
 
 {% highlight text %}
 sslmode=require
 {% endhighlight %}
 
-Then, using the [buildpack](https://devcenter.heroku.com/articles/buildpacks),
+Then, using the a [buildpack](https://devcenter.heroku.com/articles/buildpacks),
 we put the JAR file in the `lib/ext` directory of the JDK, which means it will be
 on the classpath of every JVM-based application on Heroku.
 
