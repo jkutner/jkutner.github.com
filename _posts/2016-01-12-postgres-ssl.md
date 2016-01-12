@@ -21,7 +21,7 @@ is used when connecting to a remote test, stage or even production database.
 
 Since version `9.2-1002-jdbc4`, the PostgreSQL JDBC driver has supported the `sslmode` property, which corresponds to the
 `sslmode` setting in [libpq](http://www.postgresql.org/docs/current/static/libpq-ssl.html). The desired value when connecting
-to a Heroku PostgreSQL server is `sslmode=require`. In a JDBC URL, this might look like this:
+to a Heroku PostgreSQL server is `sslmode=require`. In a JDBC URL, it might look like this:
 
 {% highlight text %}
 jdbc:postgresql://host:5432/db?sslmode=require
@@ -53,15 +53,16 @@ on the classpath of every JVM-based application on Heroku.
 
 ## Do this at home kids
 
-The approach used on Heroku is also great for your local development environment. If you prefer to
+The approach used on Heroku is also great for your local development environment. If you prefer
 developing against a cloud based Postgres instance instead of hosting a Postgres server locally, then
-you set the the `sslmode` property for all your projects.
+you may want to set the `sslmode` property for all your JVM processes.
 
-One way to do this is by simply dropping the [Heroku JAR file] that enables SSL into your
+One way to do this is by simply dropping the [Heroku JAR file](https://lang-jvm.s3.amazonaws.com/pgconfig.jar)
+that enables SSL into your
 `JAVA_HOME/jre/lib/ext` directory. Then if you need to connect to a database without SSL, you
 can add the URL parameter `sslmode=disable`. Thus, you'll default to the safe approach.
 
-Another method is to set this property on an app-by-app basis. That is, create a
+Another method is setting this property on an app-by-app basis. That is, create a
 `src/resources/org/postgresql/driverconfig.properties` file in your project with the
 same contents shown above, and put it on the classpath for your app.
 
