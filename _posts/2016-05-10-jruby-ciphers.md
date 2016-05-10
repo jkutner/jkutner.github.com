@@ -34,7 +34,7 @@ $ gem install jruby-openssl
 
 This will ensure you have the latest version of [Bouncy Castle](http://www.bouncycastle.org), the cryptographic library JRuby uses.
 
-If you're still be having problems. Don't worry. Not all is lost.
+If you're still having problems -- don't worry. Not all is lost.
 
 Before trying anything else, you'll need to capture some data about the service. Try invoking it outside of the JVM by
 running [cURL](http://curl.haxx.se) like this (I'm using httpbin.org but you'll replace it with your service's URL):
