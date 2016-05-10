@@ -1,5 +1,5 @@
 name: codefinger
-description: 
+description:
 meta_description: "Deploying with JRuby, Healthy Programmer, Remote Pairing, Heroku"
 
 markdown: redcarpet
@@ -13,3 +13,5 @@ google_analytics: 'UA-60067944-1'
 # Details for the RSS feed generator
 url:            'http://jkutner.github.io'
 author:         'Joe Kutner'
+
+gems: [jekyll-paginate]
