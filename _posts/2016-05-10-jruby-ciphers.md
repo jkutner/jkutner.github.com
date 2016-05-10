@@ -6,21 +6,12 @@ date:   2016-05-10 14:02:00
 
 A flurry of [security vulnerabilities](https://en.wikipedia.org/wiki/Logjam_%28computer_security%29)
 in the last couple of years has accelerated the deprecation of many
-cryptographic protocols and cipher suites. If you use Java or JRuby, you've likely run into this error:
+cryptographic protocols and cipher suites. As a result, you might have run into this error if you use JRuby:
 
 {% highlight text %}
 Java::JavaLang::RuntimeException: Could not generate DH keypair
     from sun.security.ssl.Handshaker.checkThrown(Handshaker.java:1362)
     from sun.security.ssl.SSLEngineImpl.checkTaskThrown(SSLEngineImpl.java:529)
-    ...
-{% endhighlight %}
-
-Or maybe this:
-
-{% highlight text %}
-Caused by: java.lang.RuntimeException: Could not generate DH keypair
-    at com.sun.net.ssl.internal.ssl.DHCrypt.<init>(DHCrypt.java:106)
-    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverKeyExchange(ClientHandshaker.java:556)
     ...
 {% endhighlight %}
 
