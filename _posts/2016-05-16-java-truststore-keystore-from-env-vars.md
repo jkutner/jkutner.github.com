@@ -21,13 +21,20 @@ But it's useful for all kinds of servers and clients.
 ## Creating a TrustStore from an Environment Variable
 
 To demonstrate the use of an in-memory TrustStore, we'll invoke a service that has
-a self-signed certificate. By default, our HTTP client will reject this call because
+a self-signed certificate. By default, the HTTP client will reject this call because
 the certificate cannot be trusted.
 
-Clone my sample project
+Clone the [EnvKeyStore examples project](https://github.com/jkutner/env-keystore-examples) by running
+this command:
+
+```
+$ git clone https://github.com/jkutner/env-keystore-examples
+```
+
+In the project you'll find a `TrustStoreExample` class that looks like this:
 
 ```java
-public class Main {
+public class TrustStoreExample {
   public static void main(String[] args) throws Exception {
     String urlStr = "https://ssl.selfsigned.xyz";
     URL url = new URL(urlStr);
@@ -39,13 +46,13 @@ public class Main {
 }
 ```
 
-Compile the class by running `mvn package`, and run with this command:
+Compile the class by running `mvn package`, and the run it with this command:
 
 ```
 $ java -cp target/app.jar TrustStoreExample
 ```
 
-You'll get this exception:
+You'll get the following exception:
 
 ```
 Exception in thread "main" javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -55,16 +62,17 @@ Exception in thread "main" javax.net.ssl.SSLHandshakeException: sun.security.val
         ...
 ```
 
-To fix this, we'll add the service's certificate to a TrustStore used by the HTTP client.
+To fix the error, we'll add the service's certificate to a TrustStore used by the HTTP client.
 
 The certification can be downloaded at [http://www.selfsigned.xyz](http://www.selfsigned.xyz) (this is a sample service I created
-just for the purpose of testing self-signed certs). Copy the certificate shown on the page from
-and including the `-----BEGIN CERTIFICATE-----` to `-----END CERTIFICATE-----`. Then set this
-as an environment variable. On Mac OS X you can run this command:
+just for the purpose of testing self-signed certs), or you can run this command on *nix platforms to set it as an environment
+variable.
 
 ```
-$ export TRUSTED_CERT="$(pbpaste)"
+$ export TRUSTED_CERT="$(curl http://www.selfsigned.xyz/server.crt)"
 ```
+
+One Windows you'll need to use the `set` command.
 
 Now modify your Java class by adding this code to the begining of the `main` method:
 
