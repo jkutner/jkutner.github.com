@@ -11,7 +11,7 @@ But in the era of the cloud, our apps need a better system.
 The [12-factor manifesto](http://12factor.net/config)
 encourages the use of environment variables for secrets, credentials, and any configuration that changes
 between environments. KeyStores and TrustStores fall into this category. You don't want to store your private key as a file on someone
-else's computer, and the certificates you trust will likely differ between environments (for example, you probably use self-signed certs
+else's computer, and the certificates you provide will likely differ between environments (for example, you might use self-signed certs
 in staging and offical certs in prod).
 
 In this post, you'll learn how to dynamically create KeyStores and TrustStores in Java from environment variables
@@ -47,7 +47,7 @@ public class TrustStoreExample {
 }
 ```
 
-Compile the class by running `mvn package`, and the run it with this command:
+Compile the class with `mvn package`, and run it with this command:
 
 ```
 $ java -cp target/app.jar TrustStoreExample
@@ -66,14 +66,14 @@ Exception in thread "main" javax.net.ssl.SSLHandshakeException: sun.security.val
 To fix the error, we'll add the service's certificate to a TrustStore used by the HTTP client.
 
 The certification can be downloaded at [http://www.selfsigned.xyz](http://www.selfsigned.xyz) (this is a sample service I created
-just for the purpose of testing self-signed certs), or you can run this command on *nix platforms to set it as an environment
+just for the purpose of testing self-signed certs), or you can run the following command on *nix platforms to set it as an environment
 variable.
 
 ```
 $ export TRUSTED_CERT="$(curl http://www.selfsigned.xyz/server.crt)"
 ```
 
-One Windows you'll need to use the `set` command.
+On Windows you'll need to use the `set` command with the contents you downloaded from the site.
 
 Now modify your Java class by adding this code to the begining of the `main` method:
 
@@ -89,18 +89,18 @@ sc.init(null, tmf.getTrustManagers(), new SecureRandom());
 HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
 ```
 
-The first line in the method captures the certificate from the environment variable
+The first line captures the certificate from the environment variable
 and creates a `KeyStore` object. The remaining lines are boilerplate Java code that
-registers the `KeyStore` with the default `SSLContext`.
+registers the `KeyStore` with an `SSLContext`.
 
 Now recompile the class by running `mvn package` again, and run the
-`java -cp target/app.jar TrustStoreExample` command again.
-The service will be invoked successfully this all.
+`java -cp target/app.jar TrustStoreExample` command one more time.
+It will invoke the service successfully now.
 
 This mechanism saves you from creating a `cacerts` file and uploading it to each
 of your production servers. Or worse: checking that file into a Git repository,
 which couples it to the codebase.
-But it's even more important when it comes to KeyStores.
+But this mechanism is even more important when it comes to KeyStores.
 
 ### Using a KeyStore
 
@@ -108,8 +108,9 @@ If you're terminating an SSL connection on the server side, you have to manage
 a secret key, a public certificate and a password. All of these can be stored
 as environment variables the `EnvKeyStore` can extract.
 
-To demostrate this, we'll create a [Ratpack](http://ratpack.io) server. The
-code is in the same [env-keystore-examples]() project in the `KeyStoreExample` class.
+To demostrate this, we'll create a [Ratpack](http://ratpack.io) HTTP server. The
+code for this is in the [env-keystore-examples](https://github.com/jkutner/env-keystore-examples)
+project in the `KeyStoreExample` class.
 It looks like this:
 
 ```java
