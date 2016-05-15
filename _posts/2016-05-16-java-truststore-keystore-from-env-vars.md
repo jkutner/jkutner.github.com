@@ -1,14 +1,15 @@
 ---
 layout: post
-title:  "Creating Java TrustStores and Keystores from Environment Variables"
-date:   2016-05-16 14:02:00
+title:  "Creating Java TrustStores and KeyStores from Environment Variables"
+date:   2016-05-12 14:02:00
 ---
 
-Java apps traditional manage TrustStores and KeyStores as regular files on the filesystem in JKS format with `keytool`.
+Java apps have traditionally managed TrustStores and KeyStores as regular files on the filesystem in JKS format with `keytool`.
 This mechanism was fine when the state-of-the-art in system administration required copying files from server to server.
-But in the era of the cloud, our apps need better security.
+But in the era of the cloud, our apps need a better system.
 
-The 12-factor manifesto encourages the use of environment variables for secrets, credentials, and any configuration that changes
+The [12-factor manifesto](http://12factor.net/config)
+encourages the use of environment variables for secrets, credentials, and any configuration that changes
 between environments. KeyStores and TrustStores fall into this category. You don't want to store your private key as a file on someone
 else's computer, and the certificates you trust will likely differ between environments (for example, you probably use self-signed certs
 in staging and offical certs in prod).
@@ -18,7 +19,7 @@ using the [EnvKeyStore](https://github.com/jkutner/env-keystore) library, which 
 points in the [Kafka Java Client](https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-Java).
 But it's useful for all kinds of servers and clients.
 
-## Creating a TrustStore from an Environment Variable
+### Using a TrustStore
 
 To demonstrate the use of an in-memory TrustStore, we'll invoke a service that has
 a self-signed certificate. By default, the HTTP client will reject this call because
@@ -97,18 +98,15 @@ Now recompile the class by running `mvn package` again, and run the
 The service will be invoked successfully this all.
 
 This mechanism saves you from creating a `cacerts` file and uploading it to each
-of your production servers. Or worse: checking that file into a Git repository
-(that can be a big security mistake).
+of your production servers. Or worse: checking that file into a Git repository,
+which couples it to the codebase.
+But it's even more important when it comes to KeyStores.
 
-If you TrustStore is not secure, someone could inject bogus certificates into
-and potential cause your app to do bad things. But it's even worse when it
-comes to KeyStores.
-
-## Creating a KeyStore from a Environment Variables
+### Using a KeyStore
 
 If you're terminating an SSL connection on the server side, you have to manage
 a secret key, a public certificate and a password. All of these can be stored
-as environment variables that `EnvKeyStore` can extract.
+as environment variables the `EnvKeyStore` can extract.
 
 To demostrate this, we'll create a [Ratpack](http://ratpack.io) server. The
 code is in the same [env-keystore-examples]() project in the `KeyStoreExample` class.
@@ -117,7 +115,8 @@ It looks like this:
 ```java
 public class KeyStoreExample {
   public static void main(String[] args) throws Exception {
-    EnvKeyStore eks = EnvKeyStore.create("KEYSTORE_KEY", "KEYSTORE_CERT", "KEYSTORE_PASSWORD");
+    EnvKeyStore eks = EnvKeyStore.create(
+        "KEYSTORE_KEY", "KEYSTORE_CERT", "KEYSTORE_PASSWORD");
     RatpackServer.start(s -> s
       .serverConfig(c -> {
         c.baseDir(BaseDir.find());
@@ -168,7 +167,7 @@ $ java -cp target/app.jar KeyStoreExample
 [main] INFO ratpack.server.RatpackServer - Ratpack started for https://localhost:5050
 ```
 
-Then open a browser to [https://localhost:5050](https://localhost:5050). After you accept the
+Finally, open a browser to [https://localhost:5050](https://localhost:5050). After you accept the
 security exception for the self-signed cert, you'll see the "Hello" page.
 
 You can learn more about including the `EnvKeyStore` library in your app by reading the
