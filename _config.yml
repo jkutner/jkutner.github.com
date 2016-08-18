@@ -1,5 +1,5 @@
 name: codefinger
-description:
+description: blog
 meta_description: "Deploying with JRuby, Healthy Programmer, Remote Pairing, Heroku"
 
 markdown: redcarpet
