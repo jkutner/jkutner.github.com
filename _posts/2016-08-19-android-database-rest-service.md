@@ -8,13 +8,15 @@ In my last post, you learned how to [invoke a service from an Android app with R
 
 ### Creating the Server app
 
-You can build a RESTful database-backed API with any of the frameworks referenced in the previous post, but in this post we'll use the Spring Boot example. You can deploy the example REST app, with a database, for free on Heroku by clicking this button:
+You can build a RESTful database-backed API with any of the frameworks referenced in the previous post. Pick the framework you'd prefer from the list below. Then deploy the example REST app for free on Heroku--with a database--by clicking the button that follows:
 
-[![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjkutner%2Fspring-boot-android-service%2Ftree%2Fdb)
+* [Spring Boot](http://projects.spring.io/spring-boot/): This app extends the [previous example](https://github.com/jkutner/spring-boot-android-service) by adding a [`Book` model class](https://github.com/jkutner/spring-boot-android-service/blob/db/src/main/java/com/example/Book.java), which has a single `isbn` field. There's also a [`BookController` class](https://github.com/jkutner/spring-boot-android-service/blob/db/src/main/java/com/example/BookController.java) that provides a RESTful API for the Book models. ([code](https://github.com/jkutner/spring-boot-android-service/tree/db)) [![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjkutner%2Fspring-boot-android-service%2Ftree%2Fdb)
 
-When you deploy the app, Heroku will provision a PostgreSQL database for you, and Spring will run [Liquibase migrations](http://www.liquibase.org) to generate it's tables.
+* [Wildfly Swarm](http://wildfly-swarm.io): This app extends the [previous example](https://github.com/jkutner/wildfly-swarm-android-service) by adding a [JPA](https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/common/jpa.html) based [`Book` model class](https://github.com/jkutner/wildfly-swarm-android-service/blob/db/src/main/java/com/example/models/Book.java), which has a single `isbn` field. There's also a [`BookEndpoint` class](https://github.com/jkutner/wildfly-swarm-android-service/blob/db/src/main/java/com/example/rest/BookEndpoint.java) that uses JAX-RS to provide a RESTful API for the Book models. ([code](https://github.com/jkutner/wildfly-swarm-android-service/tree/db)) [![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjkutner%2Fwildfly-swarm-android-service%2Ftree%2Fdb)
 
-This app extends the [previous example](https://github.com/jkutner/spring-boot-android-service) by adding a [`Book` model class](https://github.com/jkutner/spring-boot-android-service/blob/db/src/main/java/com/example/Book.java), which has a single `isbn` field. There's also a [`BookController` class](https://github.com/jkutner/spring-boot-android-service/blob/db/src/main/java/com/example/BookController.java) that provides a RESTful API for the Book models. We'll take a closer look at how this works as the Android app is built up.
+* [Ratpack](https://ratpack.io): Coming soon!
+
+When you deploy your REST app, Heroku will provision a PostgreSQL database for you, and the app will generate it's tables at startup. When the deploy is finished, note the URL again and you're ready to implement the client.
 
 ### Consuming the Services from Android
 
