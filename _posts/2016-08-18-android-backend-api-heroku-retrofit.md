@@ -44,9 +44,6 @@ The Empty Activity template has a `TextView`, which you'll use to display the re
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_below="@+id/textView"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:layout_marginTop="16dp"
     android:id="@+id/button" />
 ```
 
@@ -98,7 +95,7 @@ button.setOnClickListener(new View.OnClickListener() {
     Call<ResponseBody> call = service.hello();
     call.enqueue(new Callback<ResponseBody>() {
       @Override
-      public void onResponse(Call<ResponseBody> call,
+      public void onResponse(Call<ResponseBody> _,
                              Response<ResponseBody> response) {
         try {
           textView.setText(response.body().string());
@@ -109,7 +106,7 @@ button.setOnClickListener(new View.OnClickListener() {
       }
 
       @Override
-      public void onFailure(Call<ResponseBody> call, Throwable t) {
+      public void onFailure(Call<ResponseBody> _, Throwable t) {
         t.printStackTrace();
         textView.setText(t.getMessage());
       }
