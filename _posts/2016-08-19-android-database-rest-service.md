@@ -16,7 +16,7 @@ You can build a RESTful database-backed API with any of the frameworks reference
 
 * [Ratpack](https://ratpack.io): Coming soon!
 
-When you deploy your REST app, Heroku will provision a PostgreSQL database for you, and the app will generate it's tables at startup. When the deploy is finished, note the URL again and you're ready to implement the client.
+When you deploy your REST app, Heroku will provision a PostgreSQL database for you, and the app will generate it's tables at startup. When the deploy is finished, you're ready to implement the client.
 
 ### Consuming the Services from Android
 
