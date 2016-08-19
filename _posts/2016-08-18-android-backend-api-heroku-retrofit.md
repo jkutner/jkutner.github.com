@@ -125,4 +125,4 @@ Run the app in your emulator or connected device and click the button. This is w
 
 ### Next Steps
 
-The simple service you deployed to Heroku doesn't do much other than return a String. But backend APIs need business logic and very often a database. In the next post, you'll learn how to provision a PostgreSQL database, and connect to it from your backend service. Then you'll learn how to set up authentication so that your services are protected.
+The simple service you deployed to Heroku doesn't do much other than return a String. But backend APIs need business logic and very often a database. In [the next post](http://jkutner.github.io/2016/08/19/android-database-rest-service.html), you'll learn how to provision a PostgreSQL database, and connect to it from your backend service. Then you'll learn how to set up authentication so that your services are protected.
