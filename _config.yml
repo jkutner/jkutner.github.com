@@ -2,8 +2,13 @@ name: codefinger
 description: blog
 meta_description: "Deploying with JRuby, Healthy Programmer, Remote Pairing, Heroku"
 
-markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+  
 logo: false
 paginate: 15
 baseurl: /
