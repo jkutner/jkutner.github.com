@@ -10,7 +10,7 @@ In my last post, you learned how to [invoke a service from an Android app with R
 
 You can build a RESTful database-backed API with any of the frameworks referenced in the previous post, but in this post we'll use the Spring Boot example. You can deploy the example REST app, with a database, for free on Heroku by clicking this button:
 
-[![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjkutner%2Fspring-boot-android-service#db)
+[![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjkutner%2Fspring-boot-android-service%2Ftree%2Fdb)
 
 When you deploy the app, Heroku will provision a PostgreSQL database for you, and Spring will run [Liquibase migrations](http://www.liquibase.org) to generate it's tables.
 
