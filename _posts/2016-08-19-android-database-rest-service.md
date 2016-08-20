@@ -8,13 +8,13 @@ In my last post, you learned how to [invoke a service from an Android app with R
 
 ### Creating the Server app
 
-You can build a RESTful database-backed API with any of the frameworks referenced in the previous post. Pick the framework you'd prefer from the list below. Then deploy the example REST app for free on Heroku--with a database--by clicking the button that follows:
+You can build a RESTful database-backed API with any of the frameworks referenced in the previous post. Pick the framework you'd prefer from the list below. Then deploy the example REST app for free on [Heroku](https://heroku.com)--with a database--by clicking the button that follows:
 
 * [Spring Boot](http://projects.spring.io/spring-boot/): This app extends the [previous example](https://github.com/jkutner/spring-boot-android-service) by adding a [`Book` model class](https://github.com/jkutner/spring-boot-android-service/blob/db/src/main/java/com/example/Book.java), which has a single `isbn` field. There's also a [`BookController` class](https://github.com/jkutner/spring-boot-android-service/blob/db/src/main/java/com/example/BookController.java) that provides a RESTful API for the Book models. ([code](https://github.com/jkutner/spring-boot-android-service/tree/db)) [![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjkutner%2Fspring-boot-android-service%2Ftree%2Fdb)
 
 * [Wildfly Swarm](http://wildfly-swarm.io): This app extends the [previous example](https://github.com/jkutner/wildfly-swarm-android-service) by adding a [JPA](https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/common/jpa.html) based [`Book` model class](https://github.com/jkutner/wildfly-swarm-android-service/blob/db/src/main/java/com/example/models/Book.java), which has a single `isbn` field. There's also a [`BookEndpoint` class](https://github.com/jkutner/wildfly-swarm-android-service/blob/db/src/main/java/com/example/rest/BookEndpoint.java) that uses JAX-RS to provide a RESTful API for the Book models. ([code](https://github.com/jkutner/wildfly-swarm-android-service/tree/db)) [![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjkutner%2Fwildfly-swarm-android-service%2Ftree%2Fdb)
 
-* [Ratpack](https://ratpack.io): Coming soon!
+* [Ratpack](https://ratpack.io): This example is the most complicated of the bunch, but also the most powerful. It adds a [`Book` model](https://github.com/jkutner/ratpack-android-service/blob/db/src/main/groovy/Book.groovy) Groovy class, as well as several other classes that support the RESTful endpoints and database mappings. All of these components use [RxJava](https://github.com/ReactiveX/RxJava) and [Netflix Hystrix](https://github.com/Netflix/Hystrix/wiki) to provide fault tolerance, reduced latency, and increased responsiveness. ([code](https://github.com/jkutner/ratpack-android-service/tree/db)) [![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjkutner%2Fratpack-android-service%2Ftree%2Fdb)
 
 When you deploy your REST app, Heroku will provision a PostgreSQL database for you, and the app will generate it's tables at startup. When the deploy is finished, you're ready to implement the client.
 
@@ -148,8 +148,8 @@ button.setOnClickListener(new View.OnClickListener() {
     Call<Book> createCall = service.create(book);
     createCall.enqueue(new Callback<Book>() {
       @Override
-      public void onResponse(Call<Book> _, Response<Book> response) {
-        Book newBook = response.body();
+      public void onResponse(Call<Book> _, Response<Book> resp) {
+        Book newBook = resp.body();
         textView.setText("Created Book with ISBN: " + newBook.isbn);
       }
 
@@ -210,9 +210,9 @@ viewAllButton.setOnClickListener(new View.OnClickListener() {
     Call<List<Book>> createCall = service.all();
     createCall.enqueue(new Callback<List<Book>>() {
       @Override
-      public void onResponse(Call<List<Book>> _, Response<List<Book>> response) {
+      public void onResponse(Call<List<Book>> _, Response<List<Book>> resp) {
         allBooks.setText("ALL BOOKS by ISBN:\n");
-        for (Book b : response.body()) {
+        for (Book b : resp.body()) {
             allBooks.append(b.isbn + "\n");
         }
       }
