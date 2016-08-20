@@ -20,7 +20,7 @@ When you deploy your REST app, Heroku will provision a PostgreSQL database for y
 
 ### Consuming the Services from Android
 
-You can begin by either creating a new project in Android Studio or [cloning my sample application](https://github.com/jkutner/HerokuAndroidExample) from Github. If you want to see the completed code for this tutorial, run `git checkout -t origin/db` to clone the `db` branch of the repo.
+You can begin by either creating a new project in Android Studio or [cloning my sample application](https://github.com/jkutner/HerokuAndroidExample) from Github. If you want to see the completed code for this tutorial, run `git checkout -t origin/db` to clone the `db` branch of the repo (or you can [browse the complete code](https://github.com/jkutner/HerokuAndroidExample/tree/db)).
 
 As with the previous post, you'll need to give your app permission to access the internet. Open `AndroidManifest.xml` and add this tag before the `<application>` tag:
 
