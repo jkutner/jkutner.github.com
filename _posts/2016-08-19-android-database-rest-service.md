@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Consuming Database-backed RESTful services in an Android App"
+title:  "Using Database-backed RESTful Services on Heroku with Android"
 date:   2016-08-19 12:01:00
 ---
 
 In my last post, you learned how to [invoke a service from an Android app with Retrofit](http://jkutner.github.io/2016/08/18/android-backend-api-heroku-retrofit.html). Now you'll extend that example to consume RESTful JSON-based services that are backed by a database on the server.
 
-### Creating the Server app
+### Creating the Services and Database
 
-You can build a RESTful database-backed API with any of the frameworks referenced in the previous post. Pick the framework you'd prefer from the list below. Then deploy the example REST app for free on [Heroku](https://heroku.com)--with a database--by clicking the button that follows:
+You can build a RESTful database-backed API with any of the frameworks referenced in the previous post. Pick the framework you'd prefer from the list below. Then deploy the example REST app for free on [Heroku](https://heroku.com)--with a database--by clicking the button that follows it:
 
 * [Spring Boot](http://projects.spring.io/spring-boot/): This app extends the [previous example](https://github.com/jkutner/spring-boot-android-service) by adding a [`Book` model class](https://github.com/jkutner/spring-boot-android-service/blob/db/src/main/java/com/example/Book.java), which has a single `isbn` field. There's also a [`BookController` class](https://github.com/jkutner/spring-boot-android-service/blob/db/src/main/java/com/example/BookController.java) that provides a RESTful API for the Book models. ([code](https://github.com/jkutner/spring-boot-android-service/tree/db)) [![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjkutner%2Fspring-boot-android-service%2Ftree%2Fdb)
 
