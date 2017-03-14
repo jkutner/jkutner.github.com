@@ -18,14 +18,14 @@ If you don't already have a Firebase project,
 open the [Firebase console](https://console.firebase.google.com) and
 select **Create a New Project**.
 
-Now create a Service Account for your project by
-clicking the Settings icon (⚙) from the navigation bar, and select **Permissions**.
+You'll also need a "Service Account" for your project, which you can create by
+clicking the Settings icon (⚙) in the navigation menu and selecting **Permissions**.
 Then select **Service Accounts** and click the **Create service account** button.
 Give the account a name, and assign it the **Service account actor** role.
 
 After the account has been created, you'll need to download the JSON-formated private key
 for the account.
-Select the **...** link next to the account you created, and click **Create key**. Choose JSON as the
+Select the **...** link next to the account, and click **Create key**. Choose JSON as the
 file format, and download the file.
 
 Put the JSON file somewhere safe. You'll need it in the next step.
