@@ -36,7 +36,7 @@ the [Gradle Dependency Lock Plugin](https://plugins.gradle.org/plugin/nebula.dep
 
 From the project's [documentation](https://github.com/nebula-plugins/gradle-dependency-lock-plugin#gradle-dependency-lock-plugin):
 
->>> Some project teams may prefer to have their `build.gradle` dependencies reflect their ideal world. A latest.release for internal dependencies. A major.+, major.minor.+, or a range [2.0.0, 4.0.0). Many also want to lock to specific versions for day to day development, having a tagged version always resolve identically, and for published versions to have specific dependencies.
+> Some project teams may prefer to have their `build.gradle` dependencies reflect their ideal world. A latest.release for internal dependencies. A major.+, major.minor.+, or a range [2.0.0, 4.0.0). Many also want to lock to specific versions for day to day development, having a tagged version always resolve identically, and for published versions to have specific dependencies.
 
 To use the plugin, add the following to your `build.gradle`:
 
