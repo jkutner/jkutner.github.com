@@ -56,7 +56,7 @@ This will generate a `build/dependencies.lock` file and copy it (save it) into y
 The file contains explicit versions for every one of your dependencies, and the transitive dependencies of
 those libraries.
 
-You can add this file to Git by running:
+You can add this file to Git, to ensure consistent across environments, by running:
 
 ```sh-session
 $ git add dependencies.lock
