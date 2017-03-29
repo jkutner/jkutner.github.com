@@ -32,9 +32,9 @@ Gradle supports [dynamic version ranges](https://docs.gradle.org/current/usergui
 ## Using the Dependency Lock Plugin from Netflix
 
 You can use dynamic dependency versions and still lock them to specific versions with
-the Gradle Dependency Lock Plugin from Netflix's Nebula Plugins project.
+the [Gradle Dependency Lock Plugin](https://plugins.gradle.org/plugin/nebula.dependency-lock) from [Netflix's Nebula Plugins project](https://github.com/nebula-plugins).
 
-From the project's documentation:
+From the project's [documentation](https://github.com/nebula-plugins/gradle-dependency-lock-plugin#gradle-dependency-lock-plugin):
 
 >>> Some project teams may prefer to have their `build.gradle` dependencies reflect their ideal world. A latest.release for internal dependencies. A major.+, major.minor.+, or a range [2.0.0, 4.0.0). Many also want to lock to specific versions for day to day development, having a tagged version always resolve identically, and for published versions to have specific dependencies.
 
