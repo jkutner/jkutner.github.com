@@ -27,7 +27,7 @@ if you'd like (it serves up HTML and accesses a database),
 but we'll take a look at another more interesting example to see how a Kotlin web application
 running on Heroku is put together.
 
-## Using Coroutines
+### Using Coroutines
 
 The [Ktor repository](https://github.com/Kotlin/ktor) contains a few sample apps that demonstrate
 both basic and unique capabilities of Kotlin. An interesting one is the
@@ -98,7 +98,7 @@ but it can also be used to prevent blocking of network IO, file IO, and GPU oper
 
 Now, let's get this app ready for the cloud.
 
-## Preparing a Ktor App for Heroku
+### Preparing a Ktor App for Heroku
 
 There are only two changes required to make a typical Ktor app work on Heroku:
 
@@ -147,7 +147,7 @@ $ git push heroku master
 After the deployment process is finished, run `heroku open` to see the app, and
 `heroku logs` to see the log output.
 
-## Other ways to deploy Kotlin
+### Other ways to deploy Kotlin
 
 Ktor includes bindings for Jetty and Tomcat in addition to Netty, which we used here.
 You can even create an embedded Ktor server, which is exactly what the
