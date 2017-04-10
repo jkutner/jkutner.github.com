@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Deploying Kotlin Webapps on Heroku"
+title:  "Deploying Kotlin on Heroku with Ktor"
 date:   2017-04-10 10:05:30
 ---
 
