@@ -113,6 +113,7 @@ this in the `pom.xml`.
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-dependency-plugin</artifactId>
+  <version>3.0.0</version>
   <executions>
     <execution>
       <id>copy-dependencies</id>
