@@ -100,10 +100,30 @@ Now, let's get this app ready for the cloud.
 
 ### Preparing a Ktor App for Heroku
 
-There are only two changes required to make a typical Ktor app work on Heroku:
+There are only three changes required to make a typical Ktor app work on Heroku:
 
+* Copy dependencies into the `target/` directory.
 * Set the `port` from the `$PORT` environment variable.
 * Define the `web` process type in a `Procfile`.
+
+The dependencies are copied with the `maven-dependency-plugin`, which looks like
+this in the `pom.xml`.
+
+```xml
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-dependency-plugin</artifactId>
+  <executions>
+    <execution>
+      <id>copy-dependencies</id>
+      <phase>package</phase>
+      <goals><goal>copy-dependencies</goal></goals>
+    </execution>
+  </executions>
+</plugin>
+```
+
+For Gradle, a [similar technique is described in the Heroku Dev Center](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku#verify-that-your-build-file-is-set-up-correctly).
 
 We can set the port in the `resources/application.conf` by using the `$` notation to
 reference an environment variable, like this:
