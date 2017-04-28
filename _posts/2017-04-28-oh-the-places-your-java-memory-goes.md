@@ -69,8 +69,8 @@ $ top -pid <PID>
 The `top` command will show you the total memory for the Java process in the `MEM` column, like this:
 
 ```
-PID    COMMAND %CPU  TIME     #TH  #WQ  #POR MEM   PURG CMPR PGRP  PPID  STATE
-69959  java    133.5 00:14.41 17/1 0    71-  432M+ 0B   0B   69959 11514 running
+PID    COMMAND  %CPU  TIME     #TH  #WQ  #POR MEM   PURG CMPR PGRP  PPID
+69959  java     133.5 00:14.41 17/1 0    71-  432M+ 0B   0B   69959 11514
 ```
 
 The process is actually consuming about 432 MB of RAM! But we don't see this in JConsole because the calls to `ByteBuffer.allocateDirect` allocate memory in `BufferPool`s. You can inspect these pools in JConsole by clicking the *MBean* tab, and then selecting the `java.nio.BufferPool` MBean named "direct". You'll see something like this:
