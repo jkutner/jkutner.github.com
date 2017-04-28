@@ -19,7 +19,7 @@ Java process's memory is going and why. Let's take a look at these destinations.
 The most significant categories of JVM memory are:
 
 * **Heap** - The heap is where your Class instantiations or "Objects" are stored.
-* **Thread stacks** - Each thread has its own call stack. The stack stores primitive local variables and object references along with the call stack (list method invocations) itself. The stack is cleaned up as stack frames move out of context so there is no GC performed here.
+* **Thread stacks** - Each thread has its own call stack. The stack stores primitive local variables and object references along with the call stack (list of method invocations) itself. The stack is cleaned up as stack frames move out of context so there is no GC performed here.
 * **Metaspace** - Metaspace stores the Class definitions of your Objects, and some other metadata.
 * **Code cache** - The JIT compiler stores native code it generates in the code cache to improve performance by reusing it.
 * **Buffer pools** - Many libraries and frameworks allocate buffers outside of the heap to improve performance. These buffer pools can be used to share memory between Java code and native code, or map regions of a file into memory.
@@ -56,7 +56,7 @@ $ javac Main.java
 $ java -Xmx512m Main
 ```
 
-Leave the process running, and open JConsole by running `jconsole` in another terminal. Then connect to the app named "Main". Click the *Memory* tab and you'll see that heap memory is steady (probably well under 20 MB).
+Leave the process running, and open JConsole by executing `jconsole` in another terminal. Then connect to the app named "Main". Click the *Memory* tab and you'll see that heap memory is steady (probably well under 20 MB).
 
 <img src="/assets/images/jconsole-heap.png" style="width: 100%; margin-left: 0; margin-right: 0" alt="JConsole Heap">
 
@@ -69,8 +69,8 @@ $ top -pid <PID>
 The `top` command will show you the total memory for the Java process in the `MEM` column, like this:
 
 ```
-PID    COMMAND  %CPU  TIME     #TH  #WQ  #POR MEM   PURG CMPR PGRP  PPID  STATE
-69959  java     133.5 00:14.41 17/1 0    71-  432M+ 0B   0B   69959 11514 running
+PID    COMMAND %CPU  TIME     #TH  #WQ  #POR MEM   PURG CMPR PGRP  PPID  STATE
+69959  java    133.5 00:14.41 17/1 0    71-  432M+ 0B   0B   69959 11514 running
 ```
 
 The process is actually consuming about 432 MB of RAM! But we don't see this in JConsole because the calls to `ByteBuffer.allocateDirect` allocate memory in `BufferPool`s. You can inspect these pools in JConsole by clicking the *MBean* tab, and then selecting the `java.nio.BufferPool` MBean named "direct". You'll see something like this:
