@@ -28,7 +28,7 @@ The most significant categories of JVM memory are:
 JConsole and VisualVM can help you inspect some of these categories.
 But even those tools don't do a good job of capturing buffer pools, which are some of the sneakiest sources of non-heap memory use. Let's take a look at an example.
 
-### Direct buffer pools
+### Direct Buffer Pools
 
 Put the following code into a file called `Main.java`:
 
@@ -197,7 +197,7 @@ objects are probably closed in a `finally` clause. Not doing so can lead to off-
 memory leaks like the one described by Evan Jones of Twitter in
 [Debugging Java Native Memory Leaks](http://www.evanjones.ca/java-native-leak-bug.html).
 * Set your maximum heap size (`-Xmx`) lower. Too many apps are running with a
-heap that is far bigger than what they need. But a heap that is too big can
+heap that is far bigger than what they need. A heap that is too big can
 actually hurt performance because, because it causes
 the GC to take a nap, and then forces it to work overtime when it does run (often causing long pauses).
 * Tune `glibc` by setting `MALLOC_ARENA_MAX` to a lower value than it's default, which is
