@@ -6,7 +6,7 @@ date:   2017-04-28 10:11:00
 
 Java heap memory does not make up 100-percent of a JVM process's memory
 allocation. There are many categories of non-heap memory in a JVM process
-that often account for more RAM than the heap when they are summed up. It's not uncommon to set your maximum heap size to 512 MB, `-Xmx512m`, and have your process consume more than 1 gigabyte of RAM
+that often account for more RAM than the heap when they are summed up. It's possible to set your maximum heap size to 512 MB, `-Xmx512m`, and have your process consume more than 1 gigabyte of RAM
 in total.
 
 If you're not interested in learning about non-heap categories, you can
