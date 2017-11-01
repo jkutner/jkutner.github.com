@@ -28,8 +28,11 @@ public class DrainFilter implements Filter {
                        FilterChain filterChain
                       ) throws IOException, ServletException {
     activeConnections.incrementAndGet();
-    filterChain.doFilter(servletRequest, servletResponse);
-    activeConnections.decrementAndGet();
+    try {
+      filterChain.doFilter(servletRequest, servletResponse);
+    } finally {
+      activeConnections.decrementAndGet();
+    }
   }
 
   public void destroy() {
