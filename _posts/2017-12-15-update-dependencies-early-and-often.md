@@ -45,7 +45,7 @@ But there is still hope for Maven. You can use the `maven-enforcer-plugin` to en
 
 ## Enforcing Dependency Version Ranges
 
-In version `3.0.0-M1` of the Maven Enforcer Plugin (a built-in Maven plugin), you can specify a `<bannedDependencies>` configuration. For example:
+In version `3.0.0-M1` of the Maven Enforcer Plugin (a built-in Maven plugin), you can specify [configuration for `<bannedDependencies>` ](https://maven.apache.org/enforcer/enforcer-rules/bannedDependencies.html). For example:
 
 ```xml
 <plugin>
