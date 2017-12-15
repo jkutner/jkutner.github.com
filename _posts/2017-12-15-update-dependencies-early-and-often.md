@@ -8,7 +8,7 @@ Did you know version [2.8.8 of Jackson Databind](http://search.maven.org/#artifa
 
 Yet, many really smart Java developers advocate against *ever* updating dependencies so long as they still work. They justify this by [arguing that it makes your app more secure](https://stackoverflow.com/questions/4410157/how-to-break-a-maven-build-when-dependencies-are-out-of-date). This kind of lackadaisical approach to updating versions is what [led Equifax to leave a serious remote-code-execution vulnerability in a production Java Struts app for four months after a fix was available](http://www.ajc.com/business/timeline-the-hacking-equifax/U06rkYrFjPY4NWJ7B0uhuI/).
 
-I'm taking a stand: failing to update dependencies makes your app insecure. Why? Because [more than 70% of real-world attacks exploit a known vulnerability](http://www.verizonenterprise.com/verizon-insights-lab/dbir/) for which a fix is available but has not yet been applied. Updating your dependencies to the latest version may expose you to a zero-day attack, but that is a much smaller risk.
+I'm taking a stand: failing to update dependencies makes your app insecure. Why? Because [more than 70% of real-world attacks exploit a known vulnerability](http://www.verizonenterprise.com/verizon-insights-lab/dbir/) for which a fix is available but has not yet been applied. Updating your dependencies to the latest version may expose you to a [zero-day attack](https://en.wikipedia.org/wiki/Zero-day_(computing)), but that is a much smaller risk.
 
 In this post, you'll learn how to ensure that your Java app is using the latest version of any managed dependency.
 
@@ -24,7 +24,7 @@ If you're using Maven to build your app, you probably also use static version nu
 </dependency>
 ```
 
-A static version number will force Maven to use that dependency version no matter when or where you build the app. But you can also specify version ranges with Maven. For example:
+A static version number will force Maven to use an exact dependency version no matter when or where you build the app. But you can also specify version ranges with Maven. For example:
 
 ```xml
 <dependency>
@@ -55,9 +55,7 @@ In version `3.0.0-M1` of the Maven Enforcer Plugin (a built-in Maven plugin), yo
   <executions>
     <execution>
       <id>enforce-banned-dependencies</id>
-      <goals>
-        <goal>enforce</goal>
-      </goals>
+      <goals><goal>enforce</goal></goals>
       <configuration>
         <rules>
           <bannedDependencies>
@@ -79,7 +77,7 @@ This is a great improvement, but you still need to know when to update those loc
 
 ## Reporting When Dependencies Need Updating
 
-The built-in [Maven Versions Plugin](http://www.mojohaus.org/versions-maven-plugin/) can generate a report of all your dependencies that are not using the latest version. Run the following command on any Maven app to see if it's dependencies need updating:
+The built-in [Maven Versions Plugin](http://www.mojohaus.org/versions-maven-plugin/) can generate a report of all dependencies that are not using the latest version. Run the following command on any Maven app to see if it's dependencies need updating:
 
 ```
 $ mvn versions:display-dependency-updates
@@ -87,10 +85,10 @@ $ mvn versions:display-dependency-updates
 [INFO] --- versions-maven-plugin:2.5:display-dependency-updates (default-cli) @ helloworld ---
 [INFO] artifact com.fasterxml.jackson.core:jackson-databind: checking for updates from central
 [INFO] The following dependencies in Dependencies have newer versions:
-[INFO]   com.fasterxml.jackson.core:jackson-databind ........... 2.9.2 -> 2.9.3
+[INFO]   com.fasterxml.jackson.core:jackson-databind ........... 2.8.8 -> 2.9.3
 ```
 
-If you have your dependency versions extracted into `<property>` elements you can run:
+If your dependency versions have been extracted into `<property>` elements you can run:
 
 ```
 $ mvn versions:display-property-updates
@@ -128,4 +126,4 @@ Ultimately, here is what I believe every Java project using Maven should do:
 * Set up notifications with either the versions report, or with a service like VersionEye.com.
 * Run `mvn versions:update-properties` as often as possible.
 
-Stay secure my friends.
+Here's a [complete example of a what a `pom.xml` should look like](https://gist.github.com/jkutner/93674698888b3da2afe00c98ba88acd4). Stay secure my friends.
