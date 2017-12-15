@@ -4,7 +4,7 @@ title:  "Update Your Java Dependencies Early and Often"
 date:   2017-12-15 12:01:00
 ---
 
-Did you know version [2.8.8 of Jackson Databind](http://search.maven.org/#artifactdetails%7Ccom.fasterxml.jackson.core%7Cjackson-databind%7C2.8.8%7Cbundle) (a popular JSON library) has a [deserialization vulnerability](https://github.com/FasterXML/jackson-databind/issues/1599) that allows an attacker to execute any code or command on your system? If you're using this version you need to update your app immediately.
+Did you know version [2.8.8 of Jackson Databind](http://search.maven.org/#artifactdetails%7Ccom.fasterxml.jackson.core%7Cjackson-databind%7C2.8.8%7Cbundle) (a popular JSON library) has a [deserialization vulnerability](https://github.com/FasterXML/jackson-databind/issues/1599) that can be used to execute any code or command on your system? If you're using this version you need to update your app immediately.
 
 Yet, many really smart Java developers advocate against *ever* updating dependencies so long as they still work. They [argue that keeping older versions of dependencies makes your app more secure](https://stackoverflow.com/questions/4410157/how-to-break-a-maven-build-when-dependencies-are-out-of-date). But their lackadaisical approach to updating versions is what [led Equifax to leave a serious remote-code-execution vulnerability in a production Java Struts app for four months after a fix was available](http://www.ajc.com/business/timeline-the-hacking-equifax/U06rkYrFjPY4NWJ7B0uhuI/).
 
