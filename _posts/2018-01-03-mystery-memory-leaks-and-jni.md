@@ -9,7 +9,7 @@ Java libraries that invoke native code (i.e. code written in C/C++ and compiled 
 
 In this post, I'll demonstrate a native memory leak using use a popular computer vision library called [OpenCV](https://opencv.org/), which is written in C++ and compiled into native binaries we can call from its built-in Java API. After demonstrating the leak, you'll learn why it happened and how to fix it.
 
-## Example
+## Creating a Straw Man
 
 The [example application](https://github.com/jkutner/opencv-java-leak) uses OpenCV to convert a colored image to greyscale. The program intentionally leaks memory, which means it will crash after running for a few minutes. To try it locally, clone the Git repo:
 
@@ -18,7 +18,7 @@ $ git clone https://github.com/jkutner/opencv-java-leak
 $ cd opencv-java-leak
 ```
 
-Then build the Docker image, which will compile OpenCV for Linux, by running:
+Then build the Docker image, which will compile OpenCV for Linux:
 
 ```sh-session
 $ docker-compose build
@@ -48,11 +48,11 @@ measure.mem.linux.vsz=3395M measure.mem.linux.rss=595M
 
 You'll see the JVM heap and non-heap stay very small. But the total process memory (`measure.mem.linux.rss`) will grow with each iteration.
 
-If this app were running in production, you'd have quite the problem on your hands. Your container would crash once the memory consumed by the `java` process exceeded its limits. But most of the inspection tools you might ordinarily use (VisualVM, JConsole, and even Native Memory Tracking) will not report the memory memory allocated by the OpenCV code.
+If this app were running in production, you'd have quite the problem on your hands. Your container would crash once the memory consumed by the `java` process exceeded its limits. But most of the inspection tools you might ordinarily use (VisualVM, JConsole, and even Native Memory Tracking) will not report the memory allocated by the OpenCV code.
 
 OpenCV uses JNI to invoke native code written in C++ (this is the code you compiled when you ran `docker-compose build`). The native code allocates memory with `malloc` (or a similar function), which askes the operating system to reserve a chunk of memory without the JVM knowing about it. Yet this chunk of memory will still be associated with the `java` process making the JNI call, which makes it quite elusive.
 
-The root cause of the problem, however, is in the Java code that uses the OpenCV API for Java. Open the `Main.java` file in the project, and you'll see the following:
+Despite the leak originating in native code, the root cause of the problem is in the Java code that uses the OpenCV API for Java. Open the `Main.java` file in the project, and you'll see the following:
 
 ```java
 String location = "resources/Poli.jpg";
