@@ -64,7 +64,7 @@ Imgcodecs.imwrite("resources/Poli-gray.jpg", image);
 //image.release();
 ```
 
-The program reads a JPEG file into memory (via JNI internally), converts it to greyscale, and writes the new image to disk. The `Mat` object holds a reference to the in-memory image, and when the JVM garbage collects the `Mat` object it will free the memory that was allocated natively. But the `Mat` object is very small and does consume much space on the heap, which means it will not be garbaged collected very quickly. Instead, the program needs to manually release that chunk of native memory in order to stay within the system limits.
+The program reads a JPEG file into memory (via JNI internally), converts it to greyscale, and writes the new image to disk. The `Mat` object holds a reference to the in-memory image, and when the JVM garbage collects the `Mat` object it will free the memory that was allocated natively. But the `Mat` object is very small and does not consume much space on the heap, which means it will not be garbaged collected very quickly. Instead, the program needs to manually release that chunk of native memory in order to stay within the system limits.
 
 Uncomment the `image.release()` line and rebuild the Docker image. Then run the program again:
 
