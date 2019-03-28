@@ -4,9 +4,9 @@ title:  "Using Corretto, AdoptOpenJDK, Graal, and Zulu on Heroku"
 date:   2019-03-27 09:12:42
 ---
 
-In the last year, chosing a Java runtime to install has become more... interesting.
+Choosing a Java runtime to install has gotten more... interesting.
 
-There are great write-ups on which Java SDK (JDK) to use from [Simon Ritter of Azul](https://www.azul.com/eliminating-java-update-confusion/) and [Matt Raible of Okta](https://developer.okta.com/blog/2019/01/16/which-java-sdk), but in this post you'll learn how to use a few of those choices on Heroku.
+[Simon Ritter of Azul](https://www.azul.com/eliminating-java-update-confusion/) and [Matt Raible of Okta](https://developer.okta.com/blog/2019/01/16/which-java-sdk) have done great write-ups on how to choose the best JDK for you, and in this post you'll learn how to use a few of those options on Heroku.
 
 The default OpenJDK build provide by Heroku is great choice, but if you have some special need or want to get the latest JDK 8 patches you'll need a different distribution. In this post we'll cover:
 
@@ -19,13 +19,13 @@ If you don't care which of these you use, then you're probably best following th
 
 ## Using Zulu
 
-[Zulu](https://www.azul.com/downloads/zulu/) is 100% free and open source distribution of OpenJDK from [Azul Systems](https://www.azul.com/). It's a great choice for an alternative JVM on Heroku because it's officially supported. You can use Zulu by adding a `system.properties` file to your app with the following contents:
+[Zulu](https://www.azul.com/downloads/zulu/) is a 100% free and open source distribution of OpenJDK from [Azul Systems](https://www.azul.com/). It's a great choice as an alternative JVM on Heroku because it's officially supported. You can use Zulu by creating a `system.properties` file in the root of your app with the following contents:
 
 ```
 java.runtime.version=zulu-1.8.0_202
 ```
 
-Add this file to Git, and run `git push heroku master` as described in the [Heroku guide to getting started with Java](https://devcenter.heroku.com/articles/getting-started-with-java). Run the following command to confirm that it worked:
+Add this file to Git, and run `git push heroku master` as described in the [Heroku guide to getting started with Java](https://devcenter.heroku.com/articles/getting-started-with-java). Then run the following command to confirm that it worked:
 
 ```
 $ heroku run java -version
@@ -35,16 +35,18 @@ OpenJDK Runtime Environment (Zulu 8.36.0.1-CA-linux64) (build 1.8.0_202-b05)
 OpenJDK 64-Bit Server VM (Zulu 8.36.0.1-CA-linux64) (build 25.202-b05, mixed mode)
 ```
 
+In addition to JDK 8, you can use Zulu JDK 11 and 12 by using the appropriate version strings in your `system.properties` file.
+
 ## Using AdoptOpenJDK
 
-[AdoptOpenJDK](https://adoptopenjdk.net) is a community of Java User Group (JUG) members, Java developers, and vendors who provide free and open source builds of OpenJDK. You can use AdoptOpenJDK binaries by adding a third-party buildpack to your Heroku app in conjunction with an official buildpack.
+[AdoptOpenJDK](https://adoptopenjdk.net) is a community of Java User Group (JUG) members, Java developers, and vendors who provide free and open source builds of OpenJDK. You can use AdoptOpenJDK binaries by adding a third-party buildpack to your Heroku app in conjunction with an official buildpack. Run these commands:
 
 ```
 $ heroku buildpacks:set jdk/adopt
 $ heroku buildpacks:add heroku/java
 ```
 
-Then execute `git push heroku master` as before, and you'll be running with an AdoptOpenJDK binary. Run the following command to confirm that it worked:
+Then deploy as before, and you'll be using an AdoptOpenJDK binary. Run the following command to confirm that it worked:
 
 ```
 $ heroku run java -version
@@ -54,7 +56,7 @@ OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_202-201903270428-b08)
 OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.202-b08, mixed mode)
 ```
 
-You can customize the JDK version with [environment variables or a `system.properties` file](https://github.com/jkutner/adoptopenjdk-buildpack#customizing).
+You can customize the AdoptOpenJDK version with [environment variables or a `system.properties` file](https://github.com/jkutner/adoptopenjdk-buildpack#customizing).
 
 ## Using Corretto
 
@@ -79,14 +81,14 @@ The Corretto buildpack has a few configuration options, which you can learn abou
 
 ## Using GraalVM
 
-The last JDK option is a little different than the others. [GraalVM](https://www.graalvm.org/) is a universal virtual machine for running applications written in JavaScript, Python, Ruby, R, JVM-based languages like Java, Scala, Kotlin, Clojure, and more. You can use it on Heroku by adding a third-party buildpack to your Heroku app in conjunction with an official buildpack:
+The last JDK option is a little different than the others. [GraalVM](https://www.graalvm.org/) is a universal virtual machine for running applications written in JavaScript, Python, Ruby, and R as well as JVM-based languages like Java, Scala, Kotlin, Clojure, and more. You can use it on Heroku by adding a third-party buildpack to your Heroku app in conjunction with an official buildpack:
 
 ```
 $ heroku buildpacks:set jdk/graal
 $ heroku buildpacks:add heroku/java
 ```
 
-Then execute `git push heroku master` as before, and you'll be running with GraalVM. Run the following command to confirm that it worked:
+Then deploy as before, and you'll be using GraalVM. Run the following command to confirm that it worked:
 
 ```
 $ heroku run java -version
