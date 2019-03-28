@@ -96,6 +96,6 @@ OpenJDK GraalVM CE 1.0.0-rc14 (build 25.202-b08-jvmci-0.56, mixed mode)
 
 The Graal buildpack has a few configuration options, which you can learn about in the [repo's README file](https://github.com/jkutner/graal-buildpack).
 
-# So Many Choices
+## So Many Choices
 
 As mentioned before, it's probably best to stick with the [default JDK provided by Heroku](https://devcenter.heroku.com/articles/java-support). But these are all great choices. For more information, see the [Heroku documentation on Java](https://devcenter.heroku.com/categories/java-support).
