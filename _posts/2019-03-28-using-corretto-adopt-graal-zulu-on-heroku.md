@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Using Corretto, AdoptOpenJDK, Graal, and Zulu on Heroku"
+title:  "Using AdoptOpenJDK, Corretto, Zulu, and Graal on Heroku"
 date:   2019-03-27 09:12:42
 ---
 
