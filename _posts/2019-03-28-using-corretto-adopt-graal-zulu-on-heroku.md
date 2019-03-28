@@ -4,7 +4,9 @@ title:  "Using AdoptOpenJDK, Corretto, Zulu, and Graal on Heroku"
 date:   2019-03-27 08:12:42
 ---
 
-Choosing a Java runtime to install has become... interesting. [Simon Ritter of Azul](https://www.azul.com/eliminating-java-update-confusion/) and [Matt Raible of Okta](https://developer.okta.com/blog/2019/01/16/which-java-sdk) have done great write-ups on how to select the right JDK, and in this post you'll learn how to use a few of those options on Heroku. We'll cover:
+Choosing a Java runtime to install has become... interesting. [Simon Ritter of Azul](https://www.azul.com/eliminating-java-update-confusion/) and [Matt Raible of Okta](https://developer.okta.com/blog/2019/01/16/which-java-sdk) have done great write-ups on how to select the right JDK, and in this post you'll learn how to use a few of those options on Heroku.
+
+We'll cover:
 
 * Azul Zulu JDK
 * Amazon Corretto JDK
