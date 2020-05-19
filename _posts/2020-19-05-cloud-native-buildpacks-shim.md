@@ -10,7 +10,7 @@ You can't teach an old dog new tricks, but you can wrap it in an API compatibili
 https://cnb-shim.herokuapp.com/v1/<namespace>/<name>
 ```
 
-[Cloud Native Buildpacks](https://buildpacks.io) (CNB) are a new way of building Docker images without a `Dockerfile`, but they're based on a much older technology: [Heroku Buildpacks](https://devcenter.heroku.com/articles/buildpacks). Buildpacks were first created almost 10 years ago as a way of adding multiple-language support for the Heroku platform. Over time, other platforms adopted the technology, but the lack of neutral governance for the Buildpack API led to a fracturing of the ecosystem. In 2018, the ecosystem rejoined with [a new unified API under the CNCF](https://blog.heroku.com/buildpacks-go-cloud-native).
+[Cloud Native Buildpacks](https://buildpacks.io) (CNB) are a new way of building Docker images without a `Dockerfile`, but they're based on a much older technology: [Heroku Buildpacks](https://devcenter.heroku.com/articles/buildpacks). Buildpacks were first created almost 10 years ago as a way of adding multiple-language support for the Heroku platform. Over time, other platforms adopted the technology, but the lack of governance for the Buildpack API led to a fracturing of the ecosystem. In 2018, the ecosystem rejoined with [a new unified API under the CNCF](https://blog.heroku.com/buildpacks-go-cloud-native).
 
 <img src="/assets/images/buildpacks-history.png" style="width: 100%; margin-left: 0; margin-right: 0" alt="Buildpacks History">
 
