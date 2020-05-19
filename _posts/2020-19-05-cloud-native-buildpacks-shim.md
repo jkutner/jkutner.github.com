@@ -14,7 +14,7 @@ https://cnb-shim.herokuapp.com/v1/<namespace>/<name>
 
 <img src="/assets/images/buildpacks-history.png" style="width: 100%; margin-left: 0; margin-right: 0" alt="Buildpacks History">
 
-The new API version broke compatibility with existing Heroku buildpacks (which we call `v2(a)` buildpacks). But we didn't want to eschew the thousands of existing buildpacks, so we built a [`v2(a)` to CNB compatibility layer](https://github.com/heroku/cnb-shim) or "CNB shim".
+The new CNB API version (`v3`) broke compatibility with existing Heroku buildpacks (`v2(a)`). But in order to preserve the functionality contained in the thousands of existing `v2(a)` buildpacks, we built a [`v2(a)` to `v3` compatibility layer](https://github.com/heroku/cnb-shim) or "CNB shim".
 
 The CNB shim can be used with any buildpack in the [Heroku Buildpack Registry](https://devcenter.heroku.com/articles/buildpack-registry). After finding a buildpack with the `heroku buildpacks:search` command or publishing a buildpack with the `heroku buildpacks:register` command, you can use it with the Pack CLI by referencing a URL in the form: `https://cnb-shim.herokuapp.com/v1/<namespace>/<name>`. For example, to use the [Elixir Buildpack](https://github.com/hashnuke/heroku-buildpack-elixir) you might run:
 
