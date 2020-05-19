@@ -4,7 +4,7 @@ title:  "Using Your Heroku Buildpacks with the Pack CLI"
 date:   2020-05-18 09:12:24
 ---
 
-You can't teach an old dog new tricks, but you can wrap it in an API compatibility layer. In this post, you'll learn how to use older versions of Heroku Buildpacks with the [Pack CLI](https://buildpacks.io/docs/install-pack/) by wrapping them in a Cloud Native Buildpack shim using a URL in the form:
+You can't teach an old dog new tricks, but you can wrap it in an API compatibility layer. In this post, you'll learn how to use older versions of Heroku Buildpacks with the [Pack CLI](https://buildpacks.io/docs/install-pack/) by wrapping them in a Cloud Native Buildpack shim that's as easy as:
 
 ```
 https://cnb-shim.herokuapp.com/v1/<namespace>/<name>
