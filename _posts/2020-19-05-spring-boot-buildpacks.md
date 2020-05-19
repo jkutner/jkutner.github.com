@@ -4,9 +4,9 @@ title:  "Building Spring Boot Docker Images with Heroku Buildpacks"
 date:   2020-05-19 14:12:24
 ---
 
-Spring Boot 2.3.0 introduced a new feature you can use to [package your app into a Docker image with Cloud Native Buildpacks](https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now) (CNB). You can use this feature with Heroku buildpacks to create an image you can run on any cloud platform.
+Spring Boot 2.3.0 introduced a new feature you can use to [package your app into a Docker image with Cloud Native Buildpacks](https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now) (CNB). In this post, you'll learn how to use this mechanism with Heroku buildpacks to create an image you can run on any cloud platform.
 
-The new buildpack support works with both Maven and Gradle. For Maven you can use the command `mvn spring-boot:build-image` and with Gradle it’s `gradle bootBuildImage`. By default, both commands use the [Paketo buildpacks](https://paketo.io/) from Cloud Foundry, but the commands can be customized to run any buildpacks (even those you've created yourself).
+The new buildpack support works with both Maven and Gradle by running the command `mvn spring-boot:build-image` or `gradle bootBuildImage` respectively. By default, both use the [Paketo buildpacks](https://paketo.io/) from Cloud Foundry, but the commands can be customized to run any buildpacks (even those you've created yourself).
 
 ### Maven
 
