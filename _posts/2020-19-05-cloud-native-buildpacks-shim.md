@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Using your Heroku Buildpacks with the Pack CLI"
+title:  "Using Your Heroku Buildpacks with the Pack CLI"
 date:   2020-05-18 09:12:24
 ---
 
