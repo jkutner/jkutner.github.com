@@ -44,6 +44,18 @@ $ docker run -it -p 5000:5000 gradle-getting-started:1.0
 
 With the Docker container running, you can access the app at `http://localhost:5000`.
 
+### Adding Your Own Buildpacks
+
+You can introduce custom Cloud Native Buildpacks to the Spring Boot build process by [creating your own builder image](https://buildpacks.io/docs/operator-guide/create-a-builder/). A builder image is a constuct that encapsulates multiple buildpacks so they can be distributed.
+
+You can start with an example like either the [`heroku/spring-boot-buildpacks` builder](https://github.com/heroku/pack-images/blob/e1f0e77b8becc221ac2ca27203cf3d02973d11af/spring-boot-builder.toml) or the default [`gcr.io/paketo-buildpacks/builder:base-platform-api-0.3` builder](https://github.com/paketo-buildpacks/builder) and add your own buildpacks to the `builder.toml. Then use the [Pack CLI](https://buildpacks.io/docs/install-pack/) run a command like:
+
+```
+$ pack create-builder my-spring-boot-buildpacks --builder-config ./builder.toml
+```
+
+Then run Maven with the `-Dspring-boot.build-image.builder=my-spring-boot-buildpacks` option or Gradle with the `--builder my-spring-boot-buildpacks` option.
+
 ### Deploying
 
 In either case (Maven or Gradle), you can deploy the resulting image to the [Heroku Container Runtime](https://devcenter.heroku.com/articles/container-registry-and-runtime) with commands like these:
