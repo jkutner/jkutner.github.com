@@ -10,13 +10,13 @@ A Docker container is an isolated environment where you can set up programs and 
 
 To begin, you'll need to install a few tools and create a Docker image for your server.
 
-### Build the image
+### Build the server
 
 Open a terminal because you'll need to run several commands. On MacOS you can open `Terminal.app` and on Windows you can open `cmd.exe`.
 
-To run the commands in this tutorial, you'll need to install [Pack](https://buildpacks.io/docs/tools/pack/), which requires that you also install [Docker](https://www.docker.com/products/docker-desktop). Click those links and follow the installation instructions. Then make sure everything is working by running the following commands:
+To run the commands, you'll need to install [Pack](https://buildpacks.io/docs/tools/pack/) and [Docker](https://www.docker.com/products/docker-desktop). Click those links and follow the installation instructions. Then make sure everything is working by running the following commands:
 
-(warning: do not include the `>` character in your commands. That's only meant to show the [prompt](https://www.lifewire.com/command-prompt-2625840). On Windows this will look something like `C:\>`)
+_(warning: do not include the `>` character in your commands. That's only meant to show the [prompt](https://www.lifewire.com/command-prompt-2625840). On Windows this will look something like `C:\>`)_
 
 ```
 > docker ps
@@ -45,15 +45,15 @@ Check that your image is ready by running this command:
 
 ```
 > docker image ls minecraft
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-minecraft           latest              bbc0352e09ea        41 years ago        1.21GB
+REPOSITORY          TAG                 IMAGE ID            CREATED
+minecraft           latest              bbc0352e09ea        41 years ago
 ```
 
-(don't worry, it's [not really 41 years ago](https://medium.com/buildpacks/time-travel-with-pack-e0efd8bf05db))
+_(don't worry, it's [not really 41 years ago](https://medium.com/buildpacks/time-travel-with-pack-e0efd8bf05db))_
 
 Now you're ready to run the server.
 
-### Run the image locally
+### Run the server locally
 
 You'll begin by running the server locally (on your personal computer), but later on you can deploy it to a cloud platform. Use the `docker run` command to start a container with the image you created in the previous section:
 
@@ -123,7 +123,16 @@ Now you're ready to start hacking on your Minecraft server. The `mcpi` library l
 
 ### Go build something awesome!
 
-Now you can create Python files (i.e. files that end in `.py`) and run them like any other Python script. As long as your server is running, they'll be able to interact with it. If it's not running, you'll get an error that looks something like this:
+Now you can create Python files (i.e. files that end in `.py`) and run them like any other Python script. For example, you might take the commands you ran earlier and put them in a `teleport.py` script with the following contents:
+
+```python
+from mcpi.minecraft import Minecraft
+
+mc = Minecraft.create()
+mc.player.setTilePos(0,100,0)
+```
+
+Then you can run it with a command like `python teleport.py`. As long as your server is running, your scripts will be able to interact with it. If it's not running, you'll get an error that looks something like this:
 
 ```
 Traceback (most recent call last):
@@ -140,6 +149,8 @@ If that happens, make sure your server is running by executing the same `docker 
 ```
 > docker run -it -p 4711:4711 -p 25566:25566 minecraft
 ```
+
+Eventually, you'll want to customize your server by increasing your ops level or setting some `server.properties`. When that time comes, see the [documentation for the Minecraft buildpack](https://github.com/jkutner/minecraft-buildpack/blob/master/README.md).
 
 ### How it works
 
