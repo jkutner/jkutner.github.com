@@ -14,15 +14,15 @@ To begin, you'll need to install a few tools and create a Docker image for your 
 
 Open a terminal because you'll need to run several commands. On MacOS you can open `Terminal.app` and on Windows you can open `cmd.exe`.
 
-To run the commands in this tutorial, you'll need to install [Pack](https://buildpacks.io/docs/tools/pack/), which requires that you also install [Docker](https://www.docker.com/products/docker-desktop). Click those links and follow the installation instructions. Then make sure every thing is working by running the following commands:
+To run the commands in this tutorial, you'll need to install [Pack](https://buildpacks.io/docs/tools/pack/), which requires that you also install [Docker](https://www.docker.com/products/docker-desktop). Click those links and follow the installation instructions. Then make sure everything is working by running the following commands:
 
-(warning: do not include the `$` character in your commands. That's only meant to show the prompt. On Windows this will look something like `C:\>`)
+(warning: do not include the `>` character in your commands. That's only meant to show the [prompt](https://www.lifewire.com/command-prompt-2625840). On Windows this will look something like `C:\>`)
 
 ```
-$ docker ps
+> docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED
 
-$ pack --version
+> pack --version
 0.15.1
 ```
 
@@ -37,14 +37,14 @@ This will ensure that the [RaspberryJuice plugin](https://www.spigotmc.org/resou
 Now use Pack to create a Minecraft server Docker image using the [Minecraft buildpack](https://github.com/jkutner/minecraft-buildpack). From the directory you just created, running these commands (warning: the `pack build` command take several minutes the first time you run it):
 
 ```
-$ pack config trusted-builders add jkutner/minecraft-builder:18
-$ pack build --builder jkutner/minecraft-builder:18 minecraft
+> pack config trusted-builders add jkutner/minecraft-builder:18
+> pack build --builder jkutner/minecraft-builder:18 minecraft
 ```
 
 Check that your image is ready by running this command:
 
 ```
-$ docker image ls minecraft
+> docker image ls minecraft
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 minecraft           latest              bbc0352e09ea        41 years ago        1.21GB
 ```
@@ -58,7 +58,7 @@ Now you're ready to run the server.
 You'll begin by running the server locally (on your personal computer), but later on you can deploy it to a cloud platform. Use the `docker run` command to start a container with the image you created in the previous section:
 
 ```
-$ docker run -it -p 4711:4711 -p 25566:25566 minecraft
+> docker run -it -p 4711:4711 -p 25566:25566 minecraft
 ```
 
 The new container will expose two [ports](https://en.wikipedia.org/wiki/Port_%28computer_networking%29) (4711 and 25566), which you'll use to connect to the server.
@@ -72,20 +72,20 @@ Leave your player in the game, and return to your terminal session to start usin
 To use Python with your server, you'll need to have [Python installed](https://wiki.python.org/moin/BeginnersGuide/Download) on your machine. Once it's installed, you'll be able to start a Python shell by running
 
 ```
-$ python --version
+> python --version
 Python 3.9.1
 ```
 
 Install the mcpi package (note: on some computers you'll need to run `pip3` instead of `pip`):
 
 ```
-$ pip install mcpi
+> pip install mcpi
 ```
 
 Now start a Python shell session by running the `python` command with no arguments:
 
 ```
-$ python
+> python
 Python 3.9.1 (default, Dec 10 2020, 10:36:35)
 [Clang 12.0.0 (clang-1200.0.32.27)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
@@ -138,7 +138,7 @@ ConnectionRefusedError: [Errno 61] Connection refused
 If that happens, make sure your server is running by executing the same `docker run` command you ran earlier:
 
 ```
-$ docker run -it -p 4711:4711 -p 25566:25566 minecraft
+> docker run -it -p 4711:4711 -p 25566:25566 minecraft
 ```
 
 ### How it works
