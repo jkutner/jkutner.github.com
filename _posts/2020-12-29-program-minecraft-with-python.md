@@ -14,7 +14,7 @@ To begin, you'll need to install a few tools and create a Docker image for your 
 
 Open a terminal because you'll need to run several commands. On MacOS you can open `Terminal.app` and on Windows you can open `cmd.exe`.
 
-To run the commands, you'll need to install [Pack](https://buildpacks.io/docs/tools/pack/) and [Docker](https://www.docker.com/products/docker-desktop). Click those links and follow the installation instructions. Then make sure everything is working by running the following commands:
+To run the commands, you'll need to install [Pack](https://buildpacks.io/docs/tools/pack/) and [Docker](https://www.docker.com/products/docker-desktop). Click those links and follow the installation instructions (this is probably the hardest part of the tutorial, so don't get discouraged!). Then make sure everything is working by running the following commands:
 
 _(warning: do not include the `>` character in your commands. That's only meant to show the [prompt](https://www.lifewire.com/command-prompt-2625840). On Windows this will look something like `C:\>`)_
 
