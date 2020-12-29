@@ -12,7 +12,11 @@ To begin, you'll need to install a few tools and create a Docker image for your 
 
 ### Build the image
 
-To run the commands in this tutorial, you'll need to install [Pack](https://buildpacks.io/docs/tools/pack/), which requires that you also install [Docker](https://www.docker.com/products/docker-desktop). Make sure every thing is working by running:
+Open a terminal because you'll need to run several commands. On MacOS you can open `Terminal.app` and on Windows you can open `cmd.exe`.
+
+To run the commands in this tutorial, you'll need to install [Pack](https://buildpacks.io/docs/tools/pack/), which requires that you also install [Docker](https://www.docker.com/products/docker-desktop). Click those links and follow the installation instructions. Then make sure every thing is working by running the following commands:
+
+(warning: do not include the `$` character in your commands. That's only meant to show the prompt. On Windows this will look something like `C:\>`)
 
 ```
 $ docker ps
@@ -22,16 +26,18 @@ $ pack --version
 0.15.1
 ```
 
-Next, create a directory to store your Minecraft server. On Mac or Linux run:
+Next, create a directory to store your Minecraft server. In that directory, create a file called `plugins.txt` and put the following contents into it:
 
 ```
-$ git clone https://github.com/jkutner/minecraft-python-server
-$ cd minecraft
+raspberryjuice
 ```
 
-Now use Pack to create a Minecraft server Docker image using the [Minecraft buildpack](https://github.com/jkutner/minecraft-buildpack) by running this command:
+This will ensure that the [RaspberryJuice plugin](https://www.spigotmc.org/resources/raspberryjuice.22724/) gets installed. You'll need to this to use Python with your server.
+
+Now use Pack to create a Minecraft server Docker image using the [Minecraft buildpack](https://github.com/jkutner/minecraft-buildpack). From the directory you just created, running these commands (warning: the `pack build` command take several minutes the first time you run it):
 
 ```
+$ pack config trusted-builders add jkutner/minecraft-builder:18
 $ pack build --builder jkutner/minecraft-builder:18 minecraft
 ```
 
@@ -115,10 +121,30 @@ A full list of available commands can be found in the [mcpi documentation](https
 
 Now you're ready to start hacking on your Minecraft server. The `mcpi` library let's you teleport, turn blocks into gold, instantly generate structures, and even save structures.
 
+### Go build something awesome!
+
+Now you can create Python files (i.e. files that end in `.py`) and run them like any other Python script. As long as your server is running, they'll be able to interact with it. If it's not running, you'll get an error that looks something like this:
+
+```
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/local/lib/python3.9/site-packages/mcpi/minecraft.py", line 376, in create
+    return Minecraft(Connection(address, port))
+  File "/usr/local/lib/python3.9/site-packages/mcpi/connection.py", line 17, in __init__
+    self.socket.connect((address, port))
+ConnectionRefusedError: [Errno 61] Connection refused
+```
+
+If that happens, make sure your server is running by executing the same `docker run` command you ran earlier:
+
+```
+$ docker run -it -p 4711:4711 -p 25566:25566 minecraft
+```
+
 ### How it works
 
-The repository you cloned from Github contains a `plugins.txt` file. This file indicates that we want to use [Spigot](https://www.spigotmc.org/), which is a modified Minecraft server that provides additional features while remaining compatible with normal Minecraft game mechanics. A Spigot server can be extended by installing plugins. You've added the [RaspberryJuice plugin](https://www.spigotmc.org/resources/raspberryjuice.22724/), which is needed to use Python.
+The `plugins.txt` file indicates that you want to use [Spigot](https://www.spigotmc.org/), which is a modified Minecraft server that provides additional features while remaining compatible with normal Minecraft game mechanics. A Spigot server can be extended by installing plugins. You've added the [RaspberryJuice plugin](https://www.spigotmc.org/resources/raspberryjuice.22724/), which is needed to use Python.
 
 ### Resources
 
-I lot of this setup is derived from the instructions in the book [Learn to Program with Minecraft](https://nostarch.com/programwithminecraft) from [No Starch Press](https://nostarch.com/). I strongly recommend it if you're new to either Python or Minecraft.
+A lot of this setup is derived from the instructions in the book [Learn to Program with Minecraft](https://nostarch.com/programwithminecraft) from [No Starch Press](https://nostarch.com/). I strongly recommend it if you're new to either Python or Minecraft.
