@@ -10,7 +10,7 @@ A Docker container is an isolated environment where you can set up programs and 
 
 To begin, you'll need to install a few tools and create a Docker image for your server.
 
-# Build the image
+### Build the image
 
 To run the commands in this tutorial, you'll need to install [Pack](https://buildpacks.io/docs/tools/pack/), which requires that you also install [Docker](https://www.docker.com/products/docker-desktop). Make sure every thing is working by running:
 
@@ -47,7 +47,7 @@ minecraft           latest              bbc0352e09ea        41 years ago        
 
 Now you're ready to run the server.
 
-# Run the image locally
+### Run the image locally
 
 You'll begin by running the server locally (on your personal computer), but later on you can deploy it to a cloud platform. Use the `docker run` command to start a container with the image you created in the previous section:
 
@@ -61,7 +61,7 @@ Test it by openning your Minecraft app. Install version 1.12.2 and launch the ga
 
 Leave your player in the game, and return to your terminal session to start using Python.
 
-# Use Python to connect
+### Use Python to connect
 
 To use Python with your server, you'll need to have [Python installed](https://wiki.python.org/moin/BeginnersGuide/Download) on your machine. Once it's installed, you'll be able to start a Python shell by running
 
@@ -115,10 +115,10 @@ A full list of available commands can be found in the [mcpi documentation](https
 
 Now you're ready to start hacking on your Minecraft server. The `mcpi` library let's you teleport, turn blocks into gold, instantly generate structures, and even save structures.
 
-# How it works
+### How it works
 
 The repository you cloned from Github contains a `plugins.txt` file. This file indicates that we want to use [Spigot](https://www.spigotmc.org/), which is a modified Minecraft server that provides additional features while remaining compatible with normal Minecraft game mechanics. A Spigot server can be extended by installing plugins. You've added the [RaspberryJuice plugin](https://www.spigotmc.org/resources/raspberryjuice.22724/), which is needed to use Python.
 
-# Resources
+### Resources
 
 I lot of this setup is derived from the instructions in the book [Learn to Program with Minecraft](https://nostarch.com/programwithminecraft) from [No Starch Press](https://nostarch.com/). I strongly recommend it if you're new to either Python or Minecraft.
