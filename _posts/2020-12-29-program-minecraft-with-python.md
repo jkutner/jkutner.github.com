@@ -37,7 +37,7 @@ This will ensure that the [RaspberryJuice plugin](https://www.spigotmc.org/resou
 Now use Pack to create a Minecraft server Docker image using the [Minecraft buildpack](https://github.com/jkutner/minecraft-buildpack). From the directory you just created, running these commands (warning: the `pack build` command take several minutes the first time you run it):
 
 ```
-> pack config trusted-builders add jkutner/minecraft-builder:18
+> pack trust-builder jkutner/minecraft-builder:18
 > pack build --builder jkutner/minecraft-builder:18 minecraft
 ```
 
