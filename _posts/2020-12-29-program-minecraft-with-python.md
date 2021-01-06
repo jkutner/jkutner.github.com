@@ -32,7 +32,7 @@ Next, create a directory to store your Minecraft server. In that directory, crea
 raspberryjuice
 ```
 
-This will ensure that the [RaspberryJuice plugin](https://www.spigotmc.org/resources/raspberryjuice.22724/) gets installed. You'll need to this to use Python with your server.
+This will ensure that the [RaspberryJuice plugin](https://www.spigotmc.org/resources/raspberryjuice.22724/) gets installed. You'll need this plugin to use Python with your server.
 
 Now use Pack to create a Minecraft server Docker image using the [Minecraft buildpack](https://github.com/jkutner/minecraft-buildpack). From the directory you just created, running these commands (warning: the `pack build` command take several minutes the first time you run it):
 
