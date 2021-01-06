@@ -4,3 +4,5 @@ _site
 .sass-cache
 
 _posts/2015-12-17-run-oracle-jdk-heroku.md
+
+.idea/
