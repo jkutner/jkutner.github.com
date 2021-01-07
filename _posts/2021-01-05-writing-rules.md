@@ -29,21 +29,21 @@ Avoid the word “easy” in your writing. If something is easy it will go witho
 When you write, you’re telling a story. When you rewrite, you’re removing all the parts that are not the story. Be ruthless as you edit. Cut and move sections as though you’re Victor Frankenstein piecing together his creature.
 
 ### Bring your reader with you
-Some pronouns will engage your reader, while others create distance between you and your reader.
+Some pronouns will engage your reader, while others distance you from them.
 * Don’t say “I find it important to”, when you mean “You should”
 * Don’t say “It is widely believed”, when you mean “I think”
 * Don’t say “I’ll show you how”, when you mean “We’ll see how”
 
-I use you/yours in this post because I want you to adopt these rules. But if I were writing a tutorial and guiding you on a journey, I might favor we/us/ours to indicate that I’m in it with you. It’s sometimes acceptable to switch between we/us/our and you/yours in a single piece of writing, but in general you want to pick a voice and stick with those pronouns.
+I use you/your in this post because I want _you_ to adopt these rules. But if I were writing a tutorial and guiding you on a journey, I might use we/us/ours to indicate that I’m in it with you. It’s sometimes acceptable to switch between we/us/our and you/your in a single piece of writing, but in general you want to pick a voice and stick with those pronouns.
 
 ### Throw the first one away
-In [The Mythical Man Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month), Fred Brooks warns software developers that their first version of code will likely have bugs, run slowly, and lack features. You'll likely need to rewrite it. The same caution applies when writing prose. Plan to throw your first draft away. You’re going to make mistakes in the first version. You might as well make them quickly and get on to the second draft.
+In [The Mythical Man Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month), Fred Brooks warns software developers that their first version of code will have bugs, run slowly, and lack features. You'll likely need to rewrite it. The same caution applies when writing prose. Plan to throw your first draft away. You’re going to make mistakes; you might as well make them quickly and get on to the second draft.
 
 ### Write, write, write
 Writing is a muscle. Practice your writing, share it with people, and learn from their feedback. Like going to the gym, it’s not easy. You'll need to create a writing schedule and set goals. Will you publish one blog post a month? Will you write a post this year that gets one-thousand views? Aim high.
 
 ### Break the rules
-Writing is an art not a science. There’s a time to break the rules, but you must do so cautiously.
+Writing is an art not a science. There’s a time to break the rules, but do so cautiously.
 
 ### Further Reading
 
