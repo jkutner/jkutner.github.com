@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My Rules for Writing Well"
-date:   2021-01-04 14:50:00
+date:   2021-01-07 14:50:00
 ---
 
 I’ve learned the hard way that writing is… hard. But I want you to learn from my mistakes.
