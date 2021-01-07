@@ -51,3 +51,4 @@ Writing is a craft, which means there's always more to learn. There are many mor
 * Dave Thomas’ [So You Want to Write a Book](https://pragdave.me/blog/2007/03/04/sywtwab-1-so-you-want-to-write-a-book.html) series
 * [Keys to Great Writing](http://www.wilbers.com/Keys.htm) by Stephen Wilbers
 * [On Writing](https://en.wikipedia.org/wiki/On_Writing%3A_A_Memoir_of_the_Craft) by Stephen King
+* [On Writing Well](https://www.goodreads.com/book/show/53343.On_Writing_Well) by William Zinsser
