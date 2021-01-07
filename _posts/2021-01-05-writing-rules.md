@@ -6,7 +6,7 @@ date:   2021-01-07 14:50:00
 
 I’ve learned the hard way that writing is… hard. But I want you to learn from my mistakes.
 
-This post is a collection of rules I’ve learned while writing four technical books, publishing countless blogs, and enduring the wrath of front-page Hacker News commentary. They're all inspired by the great mentors I've had over the years, such as [Brian Hogan](https://twitter.com/bphogan) (Pragmatic Bookshelf editor) and [Jon Mountjoy](https://twitter.com/jonmountjoy) (creator of Heroku’s DevCenter).
+This post is a collection of rules I’ve learned while writing four technical books, publishing countless blogs, and enduring the wrath of front-page Hacker News commentary. All of these rules are inspired by the great mentors I've had over the years, such as [Brian Hogan](https://twitter.com/bphogan) (Pragmatic Bookshelf editor) and [Jon Mountjoy](https://twitter.com/jonmountjoy) (creator of Heroku’s DevCenter).
 
 ### Make every word count
 Use words sparingly.
