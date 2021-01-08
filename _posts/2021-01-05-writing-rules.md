@@ -29,7 +29,7 @@ Avoid the word “easy” in your writing. If something is easy it will go witho
 When you write, you’re telling a story. When you rewrite, you’re removing all the parts that are not the story. Be ruthless as you edit. Cut and move sections like Victor Frankenstein piecing together his creature.
 
 #### Bring your reader with you
-Some pronouns will engage your reader, while others distance you from them.
+Some pronouns will engage your readers, while others distance you from them.
 * Don’t say “I find it important to”, when you mean “You should”
 * Don’t say “It is widely believed”, when you mean “I think”
 * Don’t say “I’ll show you how”, when you mean “We’ll see how”
