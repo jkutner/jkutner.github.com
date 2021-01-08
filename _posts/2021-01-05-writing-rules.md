@@ -4,7 +4,7 @@ title:  "My Rules for Writing Well"
 date:   2021-01-07 14:50:00
 ---
 
-I’ve learned the hard way that writing is… hard. But I want you to learn from my mistakes.
+I’ve learned the hard way that writing is… hard. But you can learn from my mistakes.
 
 This post is a collection of rules I’ve picked up while writing four technical books, publishing countless blogs, and enduring the wrath of frontpage Hacker News commentary. Many of these rules were imparted by the great mentors I've had over the years, such as [Brian Hogan](https://twitter.com/bphogan) (Pragmatic Bookshelf editor) and [Jon Mountjoy](https://twitter.com/jonmountjoy) (creator of Heroku’s DevCenter).
 
@@ -37,13 +37,10 @@ Some pronouns will engage your reader, while others distance you from them.
 I use you/your in this post because I want _you_ to adopt these rules. But if I were writing a tutorial and guiding you on a journey, I might use we/us/ours to indicate that I’m in it with you. It’s sometimes acceptable to switch between we/us/our and you/your in a single piece of writing, but in general you want to pick a voice and stick with those pronouns.
 
 #### Throw the first one away
-In [The Mythical Man Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month), Fred Brooks warns software developers that their first version of code will have bugs, run slowly, and lack features. You'll likely need to rewrite it. The same caution applies when writing prose. Plan to throw your first draft away. You’re going to make mistakes; you might as well make them quickly and get on to the second draft.
+In [The Mythical Man Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month), Fred Brooks warns software developers that their first version of code will have bugs, run slowly, and lack features. You'll likely need to rewrite it. The same caution applies when writing prose. Plan to throw your first draft away. You’re going to make mistakes; might as well make them quickly and get on to the second draft.
 
 #### Write, write, write
 Writing is a muscle. Practice your writing, share it with people, and learn from their feedback. Like going to the gym, it’s not easy. You'll need to create a writing schedule and set goals. Will you publish one blog post a month? Will you write a post this year that gets one-thousand views? Aim high.
-
-#### Break the rules
-Writing is an art not a science. There’s a time to break the rules, but do so cautiously.
 
 #### Know your craft
 Writing is a craft, which means there's always more to learn. There are many more rules I could have included in this post, like "prefer the active voice", "avoid noun stacks", "use action verbs", and "use puncuation effectively". But then I'd be writing a fifth book. Instead, I encourage you to read some of the wonderful resources I've used over the years:
@@ -52,3 +49,6 @@ Writing is a craft, which means there's always more to learn. There are many mor
 * [Keys to Great Writing](http://www.wilbers.com/Keys.htm) by Stephen Wilbers
 * [On Writing](https://en.wikipedia.org/wiki/On_Writing%3A_A_Memoir_of_the_Craft) by Stephen King
 * [On Writing Well](https://www.goodreads.com/book/show/53343.On_Writing_Well) by William Zinsser
+
+#### Break the rules
+Writing isn't a science. There’s a time to break the rules, but do so cautiously.
