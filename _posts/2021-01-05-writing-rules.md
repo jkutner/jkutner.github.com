@@ -4,9 +4,9 @@ title:  "My Rules for Writing Well"
 date:   2021-01-07 14:50:00
 ---
 
-I’ve learned the hard way that writing is… hard. But you can learn from my mistakes.
+I’ve learned the hard way that writing is… hard. But anyone can become a great writer by following a few rules.
 
-This post is a collection of rules I’ve picked up while writing four technical books, publishing countless blogs, and enduring the wrath of frontpage Hacker News commentary. Many of these rules were imparted by the great mentors I've had over the years, such as [Brian Hogan](https://twitter.com/bphogan) (Pragmatic Bookshelf editor) and [Jon Mountjoy](https://twitter.com/jonmountjoy) (creator of Heroku’s DevCenter).
+This post is a collection of guidelines I’ve adopted while writing four technical books, publishing countless blogs, and enduring the wrath of frontpage Hacker News commentary. Many of these rules were imparted by the great mentors I've had over the years, such as [Brian Hogan](https://twitter.com/bphogan) (Pragmatic Bookshelf editor) and [Jon Mountjoy](https://twitter.com/jonmountjoy) (creator of Heroku’s DevCenter).
 
 #### Be concise
 Make every word count.
