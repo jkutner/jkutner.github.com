@@ -26,7 +26,7 @@ Precise word choice is important, but longer isn’t always better. Unusual voca
 Avoid the word “easy” in your writing. If something is easy it will go without saying. More importantly, if readers find something difficult, you may alienate them by calling it easy. Avoid “simple” or “straightforward”, too.
 
 #### Cut and paste
-When you write, you’re telling a story. When you rewrite, you’re removing all the parts that are not the story. Be ruthless as you edit. Cut and move sections as though you’re Victor Frankenstein piecing together his creature.
+When you write, you’re telling a story. When you rewrite, you’re removing all the parts that are not the story. Be ruthless as you edit. Cut and move sections like Victor Frankenstein piecing together his creature.
 
 #### Bring your reader with you
 Some pronouns will engage your reader, while others distance you from them.
