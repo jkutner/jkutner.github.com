@@ -8,8 +8,8 @@ I’ve learned the hard way that writing is… hard. But I want you to learn fro
 
 This post is a collection of rules I’ve picked up while writing four technical books, publishing countless blogs, and enduring the wrath of frontpage Hacker News commentary. Many of these rules were imparted by the great mentors I've had over the years, such as [Brian Hogan](https://twitter.com/bphogan) (Pragmatic Bookshelf editor) and [Jon Mountjoy](https://twitter.com/jonmountjoy) (creator of Heroku’s DevCenter).
 
-#### Make every word count
-Use words sparingly.
+#### Be concise
+Make every word count.
 
 #### Write with the door closed, rewrite with the door open
 Writing requires concentration, but editing requires an open mind. When it’s time to write, close the door, turn off alerts, and remove distractions. When your first draft is complete, share it with people--friends, colleagues, reviewers--and listen to what they say.
