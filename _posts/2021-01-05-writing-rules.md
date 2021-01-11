@@ -12,7 +12,7 @@ This post is a collection of guidelines I’ve adopted while writing four techni
 Make every word count.
 
 #### Write with the door closed, rewrite with the door open
-Writing requires concentration, but editing requires an open mind. When it’s time to write, close the door, turn off alerts, and remove distractions. When your first draft is complete, share it with people--friends, colleagues, reviewers--and listen to what they say.
+Writing requires concentration, but editing requires feedback. When it’s time to write, close the door, turn off alerts, and remove distractions. When your first draft is complete, share it with people--friends, colleagues, reviewers--and listen to what they say.
 
 #### Use the right word
 Richard Feynman once told a story about a group of physicists explaining “acoustic reverberations” to a confused non-scientist. Feynman interjected, saying “it’s an echo”.
