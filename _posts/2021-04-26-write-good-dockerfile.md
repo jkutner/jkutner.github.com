@@ -24,7 +24,7 @@ In this way unrelated file changes will not affect the cache.
 
 #### Step 3: Use “line buddies” to make sure you're not installing older versions of packages
 
-Dockerfile caching can be dangerous when used the wrong way. Try to combine related RUN commands to ensure they are cached as a unit. The most common are apt-get or yum install commands. When installing packages from package managers, you always want to update the index and install packages in the same `RUN`: together they form one cacheable unit. Otherwise you risk installing outdated packages.
+Dockerfile caching can be dangerous when used the wrong way. Try to combine related `RUN` commands to ensure they are cached as a unit. The most common are apt-get or yum install commands. When installing packages from package managers, you always want to update the index and install packages in the same `RUN`: together they form one cacheable unit. Otherwise you risk installing outdated packages.
 
 <img src="/assets/images/dockerfile-step-3.png" style="width: 100%; margin-left: 0; margin-right: 0" alt="Step 1">
 
@@ -41,6 +41,8 @@ Speaking of official images...
 Official images can save a lot of time spent on maintenance because all the installation steps are done for you and best practices are applied. If you have multiple projects, they can share those layers because they use exactly the same base image.
 
 <img src="/assets/images/dockerfile-step-5.png" style="width: 100%; margin-left: 0; margin-right: 0" alt="Step 1">
+
+But the `openjdk` image isn't really "official"...
 
 #### Step 6: Actually, not all official images are equal
 
