@@ -146,6 +146,8 @@ Or with Spring Boot, you can run the following command (which uses the [Paketo B
 $ ./mvnw spring-boot:build-image
 ```
 
+Both of these commands will create a Docker image that's tailored to your app (and the language it's written in) without the need for a Dockerfile.
+
 Then, when the inevitable day comes where the Operating System needs updating, you can create a new image in milliseconds _without_ rebuilding your app, reinstalling the JDK, or re-downloading your dependencies by using the Buildpacks [rebase](https://buildpacks.io/docs/concepts/operations/rebase/) feature:
 
 ```
