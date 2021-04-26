@@ -4,7 +4,7 @@ title:  "Write a Good Dockerfile in 19 Easy Steps"
 date:   2021-04-26 09:42:01
 ---
 
-In this post you'll learn the essential steps required to write a secure, compact, and maintainable Dockerfile in just 19 easy steps. Let's get started!
+In this post you'll learn the essential steps required to write a secure, compact, and maintainable Dockerfile in just 19 "easy" steps. I think you'll be spurprised at how much you really need to know. Let's get started!
 
 #### Step 1: Check the order of your commands
 
