@@ -25,3 +25,5 @@ Both of these commands will create a well-structured Docker image that has sever
 * It can have multiple entrypoints for each operational mode
 * Reproduces the same app image digest by re-running the build
 * Includes a bill-of-materials describing the contents of the image
+
+If you still want or need to write a `Dockerfile`, see my previous post on [Writing a Good Dockerfile in 19 steps](https://jkutner.github.io/2021/04/26/write-good-dockerfile.html)
