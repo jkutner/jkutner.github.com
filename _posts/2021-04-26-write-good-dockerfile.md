@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Write a Good Dockerfile in 19 Easy Steps"
+title:  "Write a Good Dockerfile in 19 'Easy' Steps"
 date:   2021-04-26 09:42:01
 ---
 
-In this post you'll learn the essential steps required to write a secure, compact, and maintainable Dockerfile in just 19 "easy" steps. I think you'll be spurprised at how much you really need to know. Let's get started!
+In this post you'll learn the essential steps required to write a secure, compact, and maintainable Dockerfile in just 19 "easy" steps. I think you'll be surprised at how much you really need to know. Let's get started!
 
 #### Step 1: Check the order of your commands
 
@@ -30,7 +30,7 @@ Dockerfile caching can be dangerous when used the wrong way. Try to combine rela
 
 #### Step 4: Don't use too many line buddies or you'll bust the cache too often
 
-Be careful though. Too many line buddies can (i.e. chaining all commands into one RUN instruction) can bust the cache easily, hurting the development cycle. In the worst cases, you end up with RUN commands like this [114 line example from the official Python image](https://github.com/docker-library/python/blob/7217b72192c93ca2033051d7191d5689932d3912/3.6/alpine3.12/Dockerfile#L27-L141) on Docker Hub (however, this example is unavoidable because all the steps need to be one cacheable unit).
+Be careful though. Too many line buddies (i.e. chaining all commands into one RUN instruction) can bust the cache easily, hurting the development cycle. In the worst cases, you end up with RUN commands like this [114 line example from the official Python image](https://github.com/docker-library/python/blob/7217b72192c93ca2033051d7191d5689932d3912/3.6/alpine3.12/Dockerfile#L27-L141) on Docker Hub (however, this example is unavoidable because all the steps need to be one cacheable unit).
 
 <img src="/assets/images/dockerfile-step-4.png" style="width: 100%; margin-left: 0; margin-right: 0" alt="Step 1">
 
