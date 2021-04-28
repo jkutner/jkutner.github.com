@@ -4,6 +4,8 @@ title:  "Write a Good Dockerfile in 19 'Easy' Steps"
 date:   2021-04-26 09:42:01
 ---
 
+(update: also see my post on [Writing a Good Dockerfile in 0 Steps](https://jkutner.github.io/2021/04/28/write-good-dockerfile-zero-steps.html))
+
 In this post you'll learn the essential steps required to write a secure, compact, and maintainable Dockerfile in just 19 "easy" steps. I think you'll be surprised at how much you really need to know. Let's get started!
 
 #### Step 1: Check the order of your commands
