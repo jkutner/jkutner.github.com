@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Write a Good Dockerfile in 0 Steps"
-date:   2021-04-28 09:07:54
+date:   2021-04-28 07:07:54
 ---
 
 
