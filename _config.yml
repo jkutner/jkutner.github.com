@@ -1,6 +1,6 @@
 name: codefinger
 description: blog
-meta_description: "Cloud Native Buildpacvks, Healthy Programmer, Salesforce, Heroku"
+meta_description: "Cloud Native Buildpacks, Healthy Programmer, Salesforce, Heroku"
 
 highlighter: rouge
 markdown: kramdown
