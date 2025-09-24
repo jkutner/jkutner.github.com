@@ -16,7 +16,7 @@ Let's start with a simple Python app. You can use your own, or clone my example 
 git clone https://github.com/jkutner/python-inline-buildpack
 ```
 
-Move into the root directory of the repo, and you're ready.
+Move into the app directory, and you're ready.
 
 ## Creating your buildpack
 
