@@ -82,7 +82,7 @@ These are all standard buildpack features that you can learn more about at [http
 
 The inline buildpack you created earlier is pretty rudimentary. It doesn't cache `uv` or the `.venv` dir it creates. That's a bit of a disadvantage over `Dockerfile` on the surface, but the buildpack interface offers you much more advanced caching mechanisms. 
 
-For example, you could add the following to the end of the script (instead of copying the `uv binary to the working directory):
+For example, you could add the following to the end of the script (instead of copying the `uv` binary to the working directory):
 
 ```
 uv_layer="$1/uv"
