@@ -96,3 +96,5 @@ echo "launch = true" >> "${uv_layer}.toml"
 This creates a new layer called `"uv"` and defines it's [layer metadata](https://github.com/buildpacks/spec/blob/main/buildpack.md#layer-content-metadata-toml). Once you've created this layer, you can customize how it's cached, and if it should be visible to other buildpacks.
 
 Now you have all the power of Cloud Native Buildpacks at your finger tips, and you didn't even need to create a full-blown buildpack! The down-side is that you can't publish and share this buildpack, but that might be ok if it's very specific to your app. The example here is pretty useful in general, but there are other times where you may just want to run a script that's included with your app. 
+
+To learn more, see the [official documentation on inline buildpacks](https://buildpacks.io/docs/for-app-developers/how-to/build-inputs/use-inline-buildpacks/).
