@@ -4,7 +4,7 @@ title:  "Inline Buildpacks: Creating Docker Images the Easy Way"
 date:   2025-09-24 09:41:00
 ---
 
-Using buildpacks can be as easy as dropping a `project.toml` in your app repository, and adding some custom logic to build your app. But unlike a `Dockerfile`, the resulting image can benefit from powerful features like [rebase](https://buildpacks.io/docs/for-app-developers/concepts/rebase/) and advanced caching.
+Using buildpacks can be as easy as dropping a `project.toml` into your app, and adding some custom build logic. But unlike a `Dockerfile`, the resulting image can benefit from powerful features like [rebase](https://buildpacks.io/docs/for-app-developers/concepts/rebase/) and advanced caching.
 
 In this post, you'll learn how to use a simple inline buildpack to build a Docker image for a Python app. Unlike other examples that use off-the-shelf buildpacks from [Heroku](https://github.com/heroku/buildpacks) or [Paketo](https://paketo.io/), this tutorial will rely only on _your_ custom inline buildpack.
 
