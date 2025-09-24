@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Using Inline Buildpacks: CNB the Easy Way"
+title:  "Inline Buildpacks: Creating Docker Images the Easy Way"
 date:   2025-09-24 09:41:00
 ---
 
