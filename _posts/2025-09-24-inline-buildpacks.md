@@ -44,7 +44,7 @@ cp $HOME/.local/bin/uv .
 """
 ```
 
-Before you build an image, take a look at what this script is doing. First, it defines the builder image we want to use, `heroku/builder:24`, which contains several buildpacks you could have used instead of your own custom buildpack. But that's not the goal of this tutorial, so you're override those Heroku buildpacks. 
+Before you build an image, take a look at what this script is doing. First, it defines the builder image you'll use, `heroku/builder:24`, which contains several buildpacks you could have used instead of your own custom buildpack. But that's not the goal of this tutorial, so you're override those Heroku buildpacks. 
 
 Your custom buildpack is defined in the `io.buildpacks.group` table. The most important part is the `inline` key, which defines the script that will build your app (this is equivilent to a `Dockerfile` in some sense). The `inline` script installs `uv` with `curl`, uses `uv` to install your dependencies, and saves `uv` to the workspace directory so that it's available at runtime.
 
