@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Creating Inline Buildpacks"
+title:  "Using Inline Buildpacks: CNB the Easy Way"
 date:   2025-09-24 09:41:00
 ---
 
