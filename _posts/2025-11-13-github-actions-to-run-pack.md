@@ -12,6 +12,7 @@ But there's one more piece to make this workflow truly powerful: continuous inte
 
 Create a file at `.github/workflows/build.yml` in your repository with the following contents:
 
+{% raw %}
 ```yaml
 name: Build with Pack
 
@@ -36,15 +37,15 @@ jobs:
         uses: buildpacks/github-actions/setup-pack@v5.9.6
 
       - name: Build with Pack
-        run: pack build $\{{ github.event.repository.name }}
+        run: pack build ${{ github.event.repository.name }}
 
       - name: Log in to GitHub Container Registry
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: $\{{ github.actor }}
-          password: $\{{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Tag and push image
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -54,6 +55,7 @@ jobs:
           docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
           docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
 ```
+{% endraw %}
 
 ## Breaking Down the Workflow
 
@@ -97,10 +99,12 @@ The Pack CLI is what actually executes the buildpack. The official GitHub Action
 
 ### Building the Image
 
+{% raw %}
 ```yaml
 - name: Build with Pack
   run: pack build ${{ github.event.repository.name }}
 ```
+{% endraw %}
 
 This is the same command you'd run locally. It builds your application using the inline buildpack in your repository with the Heroku builder.
 
@@ -114,6 +118,7 @@ if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
 First, we authenticate to GitHub Container Registry using the built-in `GITHUB_TOKEN`:
 
+{% raw %}
 ```yaml
 - name: Log in to GitHub Container Registry
   uses: docker/login-action@v3
@@ -122,9 +127,11 @@ First, we authenticate to GitHub Container Registry using the built-in `GITHUB_T
     username: ${{ github.actor }}
     password: ${{ secrets.GITHUB_TOKEN }}
 ```
+{% endraw %}
 
 Then we tag and push the image:
 
+{% raw %}
 ```yaml
 - name: Tag and push image
   run: |
@@ -133,6 +140,7 @@ Then we tag and push the image:
     docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
     docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
 ```
+{% endraw %}
 
 We create two tags: `latest` for convenience and the commit SHA for precise version tracking.
 
