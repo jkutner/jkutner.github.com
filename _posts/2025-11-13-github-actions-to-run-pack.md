@@ -37,7 +37,6 @@ jobs:
         uses: buildpacks/github-actions/setup-pack@v5.9.6
 
       - name: Log in to GitHub Container Registry
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
