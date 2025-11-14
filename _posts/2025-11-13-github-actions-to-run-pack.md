@@ -36,9 +36,6 @@ jobs:
       - name: Setup Pack CLI
         uses: buildpacks/github-actions/setup-pack@v5.9.6
 
-      - name: Build with Pack
-        run: pack build ${{ github.event.repository.name }}
-
       - name: Log in to GitHub Container Registry
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: docker/login-action@v3
@@ -47,13 +44,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Tag and push image
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          docker tag ${{ github.event.repository.name }} ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
-          docker tag ${{ github.event.repository.name }} ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
-          docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
-          docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
+      - name: Build with Pack
+        run: pack build --publish ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest -t ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
 ```
 {% endraw %}
 
@@ -97,24 +89,7 @@ The workflow starts by checking out your code and installing the Pack CLI:
 
 The Pack CLI is what actually executes the buildpack. The official GitHub Action makes installation simple.
 
-### Building the Image
-
-{% raw %}
-```yaml
-- name: Build with Pack
-  run: pack build ${{ github.event.repository.name }}
-```
-{% endraw %}
-
-This is the same command you'd run locally. It builds your application using the inline buildpack in your repository with the Heroku builder.
-
-### Publishing (Main Branch Only)
-
-The final two steps only run on pushes to main, controlled by the `if` condition:
-
-```yaml
-if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-```
+### Building and Publishing the Image
 
 First, we authenticate to GitHub Container Registry using the built-in `GITHUB_TOKEN`:
 
@@ -129,20 +104,16 @@ First, we authenticate to GitHub Container Registry using the built-in `GITHUB_T
 ```
 {% endraw %}
 
-Then we tag and push the image:
+Then run `pack` to build our application image:
 
 {% raw %}
 ```yaml
-- name: Tag and push image
-  run: |
-    docker tag ${{ github.event.repository.name }} ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
-    docker tag ${{ github.event.repository.name }} ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
-    docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
-    docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
+- name: Build with Pack
+  run: pack build --publish ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest -t ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
 ```
 {% endraw %}
 
-We create two tags: `latest` for convenience and the commit SHA for precise version tracking.
+This is the same command you'd run locally, but with the `--publish` flag. It builds your application using the inline buildpack in your repository with the Heroku builder, and then writes the resulting image directly to the container registry. We create two tags: `latest` for convenience and the commit SHA for precise version tracking.
 
 ## Making Your Images Public
 
