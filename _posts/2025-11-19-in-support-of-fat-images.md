@@ -6,7 +6,7 @@ date:   2025-11-19 11:08:12
 
 The cloud native community has developed an almost religious devotion to slim container images. The reasoning seems sound enough: fewer packages mean a smaller attack surface, which translates to better security. But like most orthodoxies, this one deserves some scrutiny. What if our collective obsession with minimal images is causing us to overlook certain benefits of fatter images?
 
-## The Hidden Cost of Minimalism
+### The Hidden Cost of Minimalism
 
 Yes, slim images reduce attack surface area. But they also introduce a different kind of risk: proliferation. When every team is crafting their own perfectly minimal image, you end up with a zoo of heterogeneous containers across your organization. Each one is a unique snowflake, and snowflakes are beautiful until you need to plow the roads.
 
@@ -16,7 +16,7 @@ Here's what often gets lost in the slim-image discourse: standardization has rea
 
 This is the power of fat images, or more accurately, *standardized* images. When everyone shares the same foundation, patching becomes a platform-level operation rather than a per-team scramble.
 
-## Finding the Right Balance
+### Finding the Right Balance
 
 Now, I'm not advocating for recklessly bloated images. If your Java application doesn't need OpenSSL, the risk of including it may outweigh the standardization benefits. The goal isn't to stuff every conceivable package into a multi-gigabyte base image.
 
@@ -26,7 +26,7 @@ The good news is we don't have to choose just one approach. [Cloud Native Buildp
 
 More importantly, Buildpacks themselves enforce standardization in how applications are built and packaged. This consistency improves security scanning, simplifies updates, and makes standard operations actually *standard*.
 
-## Right-Sized, Not Fat or Slim
+### Right-Sized, Not Fat or Slim
 
 I'll admit the title of this post is a bit provocative&emdash;I needed to get your attention. The real answer isn't "fat images good, slim images bad." It's about right-sizing your images with a bias toward standardization.
 
